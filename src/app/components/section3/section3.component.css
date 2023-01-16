@@ -1,0 +1,15 @@
+.container-cards
+{
+display: flex;
+border: 2px solid black;
+margin: 10px auto;
+
+}
+
+.card {margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+#card1 {width: 100%;}
+

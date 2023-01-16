@@ -1,0 +1,18 @@
+
+.grid-container {display: grid;
+grid-template-areas: "header header header header"
+                      "slider slider slider slider"
+                      "menu contenido contenido contenido";}
+
+.grid-header{ grid-area: header;
+color: #fff;
+background-color: #002653;
+font-family:  'Assistant', sans-serif;}
+
+.grid-menu{grid-area: menu;
+  font-family:  'Assistant', sans-serif;}
+
+.grid-contenido{ grid-area: contenido;
+  font-family:  'Assistant', sans-serif;}
+
+.grid-slider{grid-area: slider;}
