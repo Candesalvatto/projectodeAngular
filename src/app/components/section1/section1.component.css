@@ -5,4 +5,5 @@ justify-content: center;}
 .nav li{flex-direction: row;
 list-style: none;
 padding: 10px;
+font-size: 1.2em;
 }
