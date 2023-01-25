@@ -2,7 +2,8 @@
 .grid-container {display: grid;
 grid-template-areas: "header header header header"
                       "slider slider slider slider"
-                      "menu contenido contenido contenido";}
+                      "menu contenido contenido contenido"
+                      "alumno alumno alumno alumno";}
 
 .grid-header{ grid-area: header;
 color: #fff;
@@ -16,3 +17,5 @@ font-family:  'Assistant', sans-serif;}
   font-family:  'Assistant', sans-serif;}
 
 .grid-slider{grid-area: slider;}
+
+.grid-alumno {grid-area: alumno;}

@@ -1,0 +1,16 @@
+.section-alumnos
+{background-color: #002653;
+color: #fff;
+text-align: center;}
+
+.section-alumnos button
+ { background-color: transparent;
+border: transparent;
+font-family: 'Assistant', sans-serif;
+font-size: 1.6em;}
+
+#placeholder-alumno {background-color: #002653;}
+#placeholder-alumno li {color: #fff;
+font-size: 0.5em;
+list-style: none;
+}
