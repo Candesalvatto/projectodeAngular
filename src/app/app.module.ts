@@ -7,6 +7,8 @@ import { Section2Component } from './components/section2/section2.component';
 import { Section3Component } from './components/section3/section3.component';
 import { SectionSliderComponent } from './components/section-slider/section-slider.component';
 import { SectionAlumnosComponent } from './components/section-alumnos/section-alumnos.component';
+import { FormSociosComponent } from './components/form-socios/form-socios.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { SectionAlumnosComponent } from './components/section-alumnos/section-al
     Section2Component,
     Section3Component,
     SectionSliderComponent,
-    SectionAlumnosComponent
+    SectionAlumnosComponent,
+    FormSociosComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
