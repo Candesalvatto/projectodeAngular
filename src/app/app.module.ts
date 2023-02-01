@@ -9,6 +9,7 @@ import { SectionSliderComponent } from './components/section-slider/section-slid
 import { SectionAlumnosComponent } from './components/section-alumnos/section-alumnos.component';
 import { FormSociosComponent } from './components/form-socios/form-socios.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

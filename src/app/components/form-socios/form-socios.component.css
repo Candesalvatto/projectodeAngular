@@ -1,20 +1,25 @@
 .container-form {width: 40%;
 margin-left: auto;
 margin-right: auto;
+margin-top: 100px;
 color: #002653;}
 
 .container-form h1{text-align: center;
 align-items: center;
-margin-bottom: 20px;
+margin-bottom: 30px;
 margin-top: 30px;
-color: #ffc107;}
+color: #ffc107;
+font-size: 3.5em;}
 
 .container-form h2{ align-items: flex-end;
-font-size: 1.2em;
+font-size: 1em;
 margin-bottom: 40px;
 color: #002653;}
 
 .container-form .boton {margin: 40px auto;
   text-align: center;
 }
+
+.invalid {color: red;
+font-size: 0.7em;}
 

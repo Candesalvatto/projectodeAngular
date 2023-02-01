@@ -1,18 +1,17 @@
 <div class="container-form">
   <h1> ¿Querés asociarte?</h1>
   <h2> Completá el formulario con tu información y formá parte de nosotros.</h2>
-<form class="row g-3" [formGroup]="formSocios"(ngSubmit)="asociarse()">
+<form class="row g-3" novalidate [formGroup]="formSocios"(ngSubmit)="asociarse()">
   <div class="col-md-6">
     <label for="inputName" class="form-label">Nombre</label>
     <input formControlName="nombre" type="name" class="form-control" id="inputName">
-    <div *ngIf="formSocios.controls['nombre'].errors?.['requerid']" id="validationServer01Feedback" class="invalid-feedback">Campo requerido</div>
-    <div *ngIf="formSocios.controls['nombre'].valid" id="validationServer01" class="valid-feedback">Nombre Valido</div>
+    <div class="invalid" *ngIf="formSocios.controls['nombre'].untouched && formSocios.controls['nombre'].errors?.['required']" >Campo obligatorio</div>
   </div>
 
   <div class="col-md-6">
     <label for="inputApellido" class="form-label">Apellido</label>
     <input formControlName="apellido"  type="surname" class="form-control" id="inputApellido">
-    <div *ngIf="formSocios.controls['apellido'].errors?.['requerid']" id="validationServer01Feedback" class="invalid-feedback">Campo requerido</div>
+    <div class="invalid" *ngIf="formSocios.controls['apellido'].untouched && formSocios.controls['apellido'].errors?.['required']" >Campo obligatorio</div>
   </div>
   <div class="col-md-6">
     <label for="inputAddress" class="form-label">Dirección</label>
@@ -21,7 +20,7 @@
   <div class="col-md-6">
     <label for="inputDni" class="form-label">DNI</label>
     <input formControlName="dni" type="number" class="form-control" id="inputDni">
-    <div *ngIf="formSocios.controls['dni'].errors?.['requerid']" id="validationServer01Feedback" class="invalid-feedback">Campo requerido</div>
+    <div class="invalid" *ngIf="formSocios.controls['dni'].untouched && formSocios.controls['dni'].errors?.['required']" >Campo obligatorio</div>
   </div>
   <div class="col-md-6">
     <label for="inputCountry" class="form-label">País</label>
@@ -42,12 +41,12 @@
   <div class="col-md-6">
     <label for="inputEmail4" class="form-label">Email</label>
     <input formControlName="email" type="email" class="form-control" id="inputEmail4" aria-describedby="validationServer03Feedback">
-    <div *ngIf="formSocios.controls['email'].errors?.['pattern']" id="validationServer01Feedback" class="invalid-feedback">Campo requerido</div>
+    <div class="invalid" *ngIf="formSocios.controls['email'].untouched && formSocios.controls['email'].errors?.['pattern']" >Campo obligatorio</div>
   </div>
   <div class="col-md-6">
     <label for="inputPassword4" class="form-label">Password</label>
     <input formControlName="contrasena" type="password" class="form-control " id="inputPassword4">
-    <div *ngIf="formSocios.controls['contrasena'].errors?.['minlength']" id="validationServer01Feedback" class="invalid-feedback">Campo requerido</div>
+    <div class="invalid" *ngIf="formSocios.controls['contrasena'].untouched && formSocios.controls['contrasena'].errors?.['minlength']" >Campo obligatorio</div>
   </div>
   <div class="col-12">
     <label for="inputProf" class="form-label">Profesión</label>
@@ -64,7 +63,7 @@
   <div class="col-md-6">
     <label for="inputMatricula" class="form-label">Matricula</label>
     <input formControlName="matricula" type="number" class="form-control " id="inputMatricula">
-    <div *ngIf="formSocios.controls['matricula'].errors?.['requerid']" id="validationServer01Feedback" class="invalid-feedback">Campo requerido</div>
+    <div class="invalid" *ngIf="formSocios.controls['matricula'].untouched && formSocios.controls['matricula'].errors?.['required']" >Campo obligatorio</div>
   </div>
   <div class="col-12 boton">
     <button type="submit" class="btn btn-warning" >ASOCIARME</button>
