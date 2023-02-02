@@ -11,6 +11,7 @@ import { FormSociosComponent } from './components/form-socios/form-socios.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
 @NgModule({
   declarations: [
     AppComponent,

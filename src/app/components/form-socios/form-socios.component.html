@@ -39,14 +39,16 @@
     <input formControlName="telefono" type="number" class="form-control" id="inputPhone">
   </div>
   <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Email</label>
-    <input formControlName="email" type="email" class="form-control" id="inputEmail4" aria-describedby="validationServer03Feedback">
-    <div class="invalid" *ngIf="formSocios.controls['email'].untouched && formSocios.controls['email'].errors?.['pattern']" >Campo obligatorio</div>
+    <label for="inputEmail" class="form-label">Email</label>
+    <input formControlName="email" type="email" class="form-control" id="inputEmail">
+    <div class="invalid" *ngIf="formSocios.controls['email'].untouched && formSocios.controls['email'].errors?.['pattern']" >email invalido</div>
+    <div class="invalid" *ngIf="formSocios.controls['email'].untouched && formSocios.controls['email'].errors?.['required']" >Campo obligatorio</div>
   </div>
   <div class="col-md-6">
-    <label for="inputPassword4" class="form-label">Password</label>
-    <input formControlName="contrasena" type="password" class="form-control " id="inputPassword4">
-    <div class="invalid" *ngIf="formSocios.controls['contrasena'].untouched && formSocios.controls['contrasena'].errors?.['minlength']" >Campo obligatorio</div>
+    <label for="inputPassword" class="form-label">Password</label>
+    <input formControlName="contrasena" type="password" class="form-control " id="inputPassword">
+    <div class="invalid" *ngIf="formSocios.controls['contrasena'].untouched && formSocios.controls['contrasena'].errors?.['minlength']" >Minimo 8 caracteres</div>
+    <div class="invalid" *ngIf="formSocios.controls['contrasena'].untouched && formSocios.controls['contrasena'].errors?.['required']" >Campo obligatorio</div>
   </div>
   <div class="col-12">
     <label for="inputProf" class="form-label">Profesión</label>
@@ -65,6 +67,7 @@
     <input formControlName="matricula" type="number" class="form-control " id="inputMatricula">
     <div class="invalid" *ngIf="formSocios.controls['matricula'].untouched && formSocios.controls['matricula'].errors?.['required']" >Campo obligatorio</div>
   </div>
+  <div class="span-error">{{spanError}}</div>
   <div class="col-12 boton">
     <button type="submit" class="btn btn-warning" >ASOCIARME</button>
   </div>
