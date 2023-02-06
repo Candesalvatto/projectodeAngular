@@ -10,6 +10,13 @@ import { SectionAlumnosComponent } from './components/section-alumnos/section-al
 import { FormSociosComponent } from './components/form-socios/form-socios.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SectionCursosComponent } from './components/section-cursos/section-cursos.component';
+import {MaterialModule} from './material.module';
+import { FormatoFechaHoraPipe } from './pipes/formato-fecha-hora.pipe';
+import { FormatoBooleanoPipe } from './pipes/formato-booleano.pipe';
+import { DirectivaEstilosDirective } from './directives/directiva-estilos.directive';
+import { SectionNoticiasComponent } from './components/section-noticias/section-noticias.component';
+
 
 
 @NgModule({
@@ -20,12 +27,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     Section3Component,
     SectionSliderComponent,
     SectionAlumnosComponent,
-    FormSociosComponent
+    FormSociosComponent,
+    SectionCursosComponent,
+    FormatoFechaHoraPipe,
+    FormatoBooleanoPipe,
+    DirectivaEstilosDirective,
+    SectionNoticiasComponent,
+
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

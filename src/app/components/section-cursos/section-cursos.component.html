@@ -1,0 +1,68 @@
+<div class="tabla">
+<table mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="titulo">
+    <th mat-header-cell *matHeaderCellDef>Curso</th>
+    <td mat-cell *matCellDef="let element">{{element.titulo}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="modalidad">
+    <th mat-header-cell *matHeaderCellDef>Modalidad</th>
+    <td mat-cell *matCellDef="let element" appListaAlumnos>{{element.modalidad}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="duracion">
+    <th mat-header-cell *matHeaderCellDef>Duración</th>
+    <td mat-cell *matCellDef="let element">{{element.duracion}}</td>
+  </ng-container>
+
+  <<ng-container matColumnDef="cupo">
+    <th mat-header-cell *matHeaderCellDef>Cupo</th>
+    <td mat-cell *matCellDef="let element" [appDirectivaEstilos]="element.inscripcionAbierta">{{element.cupo | formatoBooleano: 'Abierto': 'Cerrado'}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="profesor">
+    <th mat-header-cell *matHeaderCellDef>Profesor</th>
+    <td mat-cell *matCellDef="let element">{{element.profesor.nombre}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="clasesSemanales">
+    <th mat-header-cell *matHeaderCellDef>Clases Semanales</th>
+    <td mat-cell *matCellDef="let element">{{element.clasesSemanales}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="fechaInicio">
+    <th mat-header-cell *matHeaderCellDef>Fecha de Inicio</th>
+    <td mat-cell *matCellDef="let element">{{element.fechaInicio | formatoFechaHora}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef>Acciones</th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-icon-button>
+        <mat-icon> delete </mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+  <tr mat-row *matRowDef="let row; columns: columnas"></tr>
+</table>
+</div>
+
+
+
+
+
+<div class="card">
+<div class="card-body tarjeta" *ngFor="let curso of cursos">
+  <mat-card class="color-card">
+      <mat-card-header class="align">
+        <mat-card-title>{{curso.titulo}}</mat-card-title>
+      </mat-card-header>
+    <mat-card-content class="align">Dirigido a licenciados en bio imágenes y técnicos radiologos. Duración {{curso.duracion}}. Modalidad {{curso.modalidad}}</mat-card-content>
+    <mat-card-actions class="align">
+      <button mat-flat-button> IR AL CURSO</button>
+    </mat-card-actions>
+  </mat-card>
+  </div>
+</div>

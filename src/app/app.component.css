@@ -3,7 +3,9 @@
 grid-template-areas: "header header header header"
                       "slider slider slider slider"
                       "menu contenido contenido contenido"
+                      "curso curso curso curso"
                       "alumno alumno alumno alumno"
+                      "noticias noticias noticias noticias"
                       "form form form form";}
 
 .grid-header{ grid-area: header;
@@ -23,3 +25,10 @@ font-family:  'Assistant', sans-serif;}
 
 .grid-form {grid-area: form;
   font-family:  'Assistant', sans-serif;}
+
+.grid-cursos {grid-area:curso;
+width: 100%;
+color: #002653;}
+
+.grid-noticias{ grid-area: noticias;
+}
