@@ -1,6 +1,6 @@
 
 
-.container-de-container {border: 1px solid grey;
+.container-de-container {border: 1px solid rgba(0, 0, 0, 0.2);
 width: 80%;
 margin: 30px auto;
 padding: 20px;
@@ -15,7 +15,7 @@ font-size: 1.8em;}
   width: 100%;
   padding: 10px;
 }
-.contenedor-img{border-right: 1px solid grey;
+.contenedor-img{border-right: 1px solid rgba(0, 0, 0, 0.2);
 width: 100%;
 }
 

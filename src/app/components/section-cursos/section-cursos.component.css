@@ -1,16 +1,28 @@
 .tabla {width: 80%;
-margin: auto;}
-
-.tarjeta
-{margin: 10px;}
-
-.color-card{background-color: #fff;
-border: 1px solid grey;}
-
-.card {width: 70%;
-margin: 10px auto;}
-
-.mat-raised-button{background-color:#f7b549 ;
+margin:30px auto;
 }
 
-.align {margin:5px auto;}
+
+
+.mdc-data-table__header-cell {
+  color: black;
+}
+
+.mdc-data-table__cell {
+  color: black;
+}
+
+.mat-mdc-table {
+  background-color: white;
+}
+
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+    border-color: rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid;
+}

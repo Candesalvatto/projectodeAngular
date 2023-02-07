@@ -16,6 +16,7 @@ import { FormatoFechaHoraPipe } from './pipes/formato-fecha-hora.pipe';
 import { FormatoBooleanoPipe } from './pipes/formato-booleano.pipe';
 import { DirectivaEstilosDirective } from './directives/directiva-estilos.directive';
 import { SectionNoticiasComponent } from './components/section-noticias/section-noticias.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 
@@ -33,6 +34,7 @@ import { SectionNoticiasComponent } from './components/section-noticias/section-
     FormatoBooleanoPipe,
     DirectivaEstilosDirective,
     SectionNoticiasComponent,
+    FooterComponent,
 
   ],
   imports: [

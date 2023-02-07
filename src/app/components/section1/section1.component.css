@@ -1,12 +1,7 @@
-/*.nav ul{display: flex;
-width: 100%;
-align-items: center;
+.container-fluid{display: flex;
 justify-content: center;}
-.nav li{flex-direction: row;
-list-style: none;
-padding: 10px;
-font-size: 1.2em;
-}
-*/
 
+
+.container-fluid a
+ {font-size: 1.1em;}
 

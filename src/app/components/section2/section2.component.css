@@ -1,8 +1,13 @@
 
-.menu-list{background-color: #002653;
-width: 290px;
-height: 500px;}
-.list {list-style: none;
-color: #fff;
+
+
+.mat-toolbar
+{background-color: #002653;
+width: 300px;
+padding: 2em;
+font-family:  'Assistant', sans-serif;
 font-size: 1.7em;
-padding: 1.2em;}
+}
+.mat-toolbar span
+{
+margin: auto;}

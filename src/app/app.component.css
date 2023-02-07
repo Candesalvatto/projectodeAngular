@@ -3,10 +3,11 @@
 grid-template-areas: "header header header header"
                       "slider slider slider slider"
                       "menu contenido contenido contenido"
-                      "curso curso curso curso"
-                      "alumno alumno alumno alumno"
                       "noticias noticias noticias noticias"
-                      "form form form form";}
+                      "form form form form"
+                      "alumno alumno alumno alumno"
+                      "curso curso curso curso"
+                      "footer footer footer footer";}
 
 .grid-header{ grid-area: header;
 color: #fff;
@@ -32,3 +33,6 @@ color: #002653;}
 
 .grid-noticias{ grid-area: noticias;
 }
+
+.grid-footer
+{grid-area: footer;}

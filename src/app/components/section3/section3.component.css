@@ -1,13 +1,24 @@
-.container-cards
-{
-display: flex;
-/*border: 2px solid black;*/
-margin: 10px auto;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+.tabla {width: 80%;
+  margin: auto;}
 
 
+
+  .color-card{background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);}
+
+  .card {width: 70%;
+  margin: 10px auto;
+border-color: transparent;}
+
+
+  .align {margin:5px auto;}
+
+  .mat-mdc-unelevated-button:not(:disabled) {
+    background-color: orange;
 }
 
-#card {margin:10px 0px ;}
+.color-card[_ngcontent-bir-c50] {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.card-body {color:#002653}
