@@ -6,6 +6,7 @@
           <mat-card-title>{{curso.titulo}}</mat-card-title>
         </mat-card-header>
       <mat-card-content class="align">Dirigido a licenciados en bio imágenes y técnicos radiologos. Duración {{curso.duracion}}. Modalidad {{curso.modalidad}}</mat-card-content>
+      <mat-card-content class="align" [ngClass]="curso.cupo ? 'cupo-abierto' :'cupo-cerrado' ">{{curso.cupo | formatoBooleano: 'INSCRIPCIONES ABIERTAS' : 'INSCRIPCIONES CERRADAS' }}</mat-card-content>
       <mat-card-actions class="align">
         <button mat-flat-button> IR AL CURSO</button>
       </mat-card-actions>

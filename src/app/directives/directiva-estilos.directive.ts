@@ -5,7 +5,7 @@ import { Directive, OnInit, Input, ElementRef, Renderer2} from '@angular/core';
 })
 export class DirectivaEstilosDirective implements OnInit{
 
-  @Input('appDirectivaEstilos') cupo!: boolean;
+@Input('appDirectivaEstilos') inscripcionAbierta!: boolean;
 
   constructor(
     private element: ElementRef,
@@ -15,10 +15,9 @@ export class DirectivaEstilosDirective implements OnInit{
 
 
    ngOnInit(): void {
-    console.log(this.cupo);
 
-    this.renderer.setStyle(this.element.nativeElement, 'color', 'white');
-    this.renderer.setStyle(this.element.nativeElement,'background-color',this.cupo ? '#424242' : '#00408F');
+
+    this.renderer.setStyle(this.element.nativeElement, 'color', this.inscripcionAbierta ? 'orange' : 'grey');
   }
 
 }

@@ -33,10 +33,7 @@ constructor(){
 
 }
 
-this.formSocios = new FormGroup(controles);
-
-
-}
+this.formSocios = new FormGroup(controles);}
 
   asociarse(){
     if (this.formSocios.invalid){this.spanError= "Hay datos inválidos en el formulario"};
@@ -45,7 +42,7 @@ this.formSocios = new FormGroup(controles);
 
 
     //PRUEBAS DE VALIDACION
-    if(this.formSocios.controls['nombre'].errors?.['required']){
+  /*  if(this.formSocios.controls['nombre'].errors?.['required']){
       console.log("El nombre es obligatorio")};
       if(this.formSocios.controls['apellido'].errors?.['required']){
         console.log("El apellido es obligatorio")};
@@ -61,7 +58,7 @@ this.formSocios = new FormGroup(controles);
           console.log("La contraseña esta vacia")};
       if(this.formSocios.controls['matricula'].errors?.['required']){
           console.log("La matricula es obligatoria")};
-
+*/
 
 }
 }

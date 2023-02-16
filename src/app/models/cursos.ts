@@ -1,4 +1,6 @@
 import { Profesor } from './profesores';
+
+
 export interface Curso {
   titulo: string;
   modalidad: string;

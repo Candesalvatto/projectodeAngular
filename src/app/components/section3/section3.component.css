@@ -22,3 +22,10 @@ border-color: transparent;}
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .card-body {color:#002653}
+
+.cupo-abierto{color: orange;
+font-weight: 600;
+font-size: 1.1em;}
+.cupo-cerrado{color:grey ;
+  font-weight: 600;
+  font-size: 1.1em}
