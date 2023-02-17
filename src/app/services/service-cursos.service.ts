@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
-import { Observable, BehaviorSubject } from 'rxjs';
+import { Observable, BehaviorSubject, from, filter } from 'rxjs';
 import { Curso } from '../models/cursos';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceCursosService {
+
+
 
 
 
@@ -38,7 +40,7 @@ private  cursos: Curso[] = [
      { titulo: "Radiología Pediátrica",
      modalidad: "Teórico Presencial",
      duracion: "3 meses",
-     cupo: true,
+     cupo: false,
      profesor:{
        nombre: 'Ricardo Perez',
        curso: 'Radiología Pediátrica',
@@ -52,24 +54,34 @@ private  cursos: Curso[] = [
 
    private cursos$!: BehaviorSubject<Curso[]>;
 
-  constructor() { this.cursos$ = new BehaviorSubject(this.cursos);}
+  constructor() { this.cursos$ = new BehaviorSubject(this.cursos);
+
+    //filter 
+  from (this.cursos).pipe(
+    filter((cursos:Curso)=>cursos.cupo ==false)
+    ).subscribe((cursos)=>{console.log (cursos)})
+
+
+}
 
 
   //metodo para obtener la info
- // obtenerCursos(): Curso[]{
- //   return this.cursos;
- // }
+ obtenerCursos(): Curso[]{
+  return this.cursos;
+  }
 
 
-  obtenerCursos(): Promise<Curso[]>{
+  evaluarCupo(): Promise<Curso[]>{
     return new Promise((resolve, reject) => {
-      if(this.cursos.length > 0){
+      if(this.cursos[2].cupo == true){
         resolve(this.cursos);
       }else{
         reject();
       }
     });
   }
+
+
 
 
   obtenerCursosObservable(): Observable<Curso[]>{

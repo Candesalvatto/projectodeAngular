@@ -4,6 +4,7 @@ import { Curso } from '../app/models/cursos';
 import {ServiceAlumnoService} from 'src/app/services/service-alumno.service';
 import { Alumno } from '../app/models/alumnos';
 import { cursos } from 'src/app/services/data-cursos.service';
+import { from } from 'rxjs';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class AppComponent {
 
   constructor(
     private servicesDeCursos:ServiceCursosService
-  ){ };
+  ){};
 
 
 agregarCurso() {
