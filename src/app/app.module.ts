@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { Section1Component } from './components/section1/section1.component';
-import { Section2Component } from './components/section2/section2.component';
-import { Section3Component } from './components/section3/section3.component';
+import { navbarComponent } from './components/navbar/navbar.component';
+import { sidebarComponent } from './components/sidebar/sidebar.component';
+import { cardsComponent } from './components/cards/cards.component';
 import { SectionSliderComponent } from './components/section-slider/section-slider.component';
 import { SectionAlumnosComponent } from './components/section-alumnos/section-alumnos.component';
 import { FormSociosComponent } from './components/form-socios/form-socios.component';
@@ -17,15 +17,16 @@ import { FormatoBooleanoPipe } from './pipes/formato-booleano.pipe';
 import { DirectivaEstilosDirective } from './directives/directiva-estilos.directive';
 import { SectionNoticiasComponent } from './components/section-noticias/section-noticias.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FormNuevoCursoComponent } from './components/form-nuevo-curso/form-nuevo-curso.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    Section1Component,
-    Section2Component,
-    Section3Component,
+    navbarComponent,
+    sidebarComponent,
+    cardsComponent,
     SectionSliderComponent,
     SectionAlumnosComponent,
     FormSociosComponent,
@@ -35,6 +36,7 @@ import { FooterComponent } from './components/footer/footer.component';
     DirectivaEstilosDirective,
     SectionNoticiasComponent,
     FooterComponent,
+    FormNuevoCursoComponent,
 
   ],
   imports: [

@@ -56,7 +56,7 @@ private  cursos: Curso[] = [
 
   constructor() { this.cursos$ = new BehaviorSubject(this.cursos);
 
-    //filter 
+    //filter
   from (this.cursos).pipe(
     filter((cursos:Curso)=>cursos.cupo ==false)
     ).subscribe((cursos)=>{console.log (cursos)})
@@ -93,6 +93,7 @@ private  cursos: Curso[] = [
   agregarCurso(curso: Curso){
     this.cursos.push(curso);
     this.cursos$.next(this.cursos);
-    console.log("Nuevo curso agregado", this.cursos)
+    console.log("Nuevo curso agregado", this.cursos);
+
   }
 }

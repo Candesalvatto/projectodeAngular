@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Section3Component } from './section3.component';
+import { FormNuevoCursoComponent } from './form-nuevo-curso.component';
 
-describe('Section3Component', () => {
-  let component: Section3Component;
-  let fixture: ComponentFixture<Section3Component>;
+describe('FormNuevoCursoComponent', () => {
+  let component: FormNuevoCursoComponent;
+  let fixture: ComponentFixture<FormNuevoCursoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ Section3Component ]
+      declarations: [ FormNuevoCursoComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Section3Component);
+    fixture = TestBed.createComponent(FormNuevoCursoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

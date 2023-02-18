@@ -1,0 +1,60 @@
+
+<div class="container-form">
+  <hr>
+  <h2>Enseñá con nosotros</h2>
+  <h3>Brinda tus conocimientos a nuestros alumnos para que crezcan profesionalmente.</h3>
+  <div class="info">
+    <div class="contenedor text-center d-flex justify-content-between align-items-center">
+      <div class="contenedor-img d-flex justify-content-evenly">
+    <img src="../../../assets/images/SNC.png" alt="img">
+    </div>
+    <div class="container-info">
+    <p>En nuestra Sociedad de Radiología te ofrecemos la posibilidad de que vos seas quien forme a nuestros alumnos. Con el compromiso que requiere, en conjunto de nuestro equipo instancia toda la información, herramientas y servicios necesarios para la realización de un curso que capacite, perfeccione y entusiasme a los alumnos que recorren el camino del aprendizaje.<br>
+    Contar con tu experiencia y predisposición nos ayuda a que sean cada vez mas las personas que se sumen al mundo de la radiología.<br>
+  Si amas lo que hacés y estas dispuesto a enseñarlo, ésta es tu oportunidad! Queremos que seas parte de nosotros!</p>
+</div>
+</div>
+</div>
+  <form class="row g-6" [formGroup]="formCursoNuevo"(ngSubmit)="agregarCursoNuevo()">
+<div class="col-md-3">
+  <label  for="inputTitulo" class="form-label">Titulo del Curso</label>
+  <input formControlName="titulo" type="text" class="form-control" id="inputTitulo">
+  <div *ngIf="formCursoNuevo.controls['titulo'].errors?.['required']"></div>
+</div>
+<div class="col-md-3">
+  <label  for="inputModalidad" class="form-label">Modalidad del Curso</label>
+  <input formControlName="modalidad" type="text" class="form-control" id="inputModalidad">
+  <div *ngIf="formCursoNuevo.controls['modalidad'].errors?.['required']"></div>
+</div>
+<div class="col-md-3">
+  <label  for="inputDuracion" class="form-label">Duración del Curso</label>
+  <input formControlName="duracion" type="text" class="form-control" id="inputDuracion">
+  <div *ngIf="formCursoNuevo.controls['duracion'].errors?.['required']"></div>
+</div>
+<div class="col-md-3">
+  <label  for="inputCupo" class="form-label">Cupo del Curso</label>
+  <input formControlName="cupo" type="number" class="form-control" id="inputCupo">
+  <div *ngIf="formCursoNuevo.controls['cupo'].errors?.['required']"></div>
+</div>
+<div class="col-md-3">
+  <label  for="inputProfesor" class="form-label">Nombre del Profesor</label>
+  <input formControlName="profesor" type="text" class="form-control" id="inputProfesor">
+  <div *ngIf="formCursoNuevo.controls['profesor'].errors?.['required']"></div>
+</div>
+<div class="col-md-3">
+  <label  for="inputClases" class="form-label">Cantidad de clases semanales</label>
+  <input formControlName="clases" type="number" class="form-control" id="inputClases">
+  <div *ngIf="formCursoNuevo.controls['clases'].errors?.['required']"></div>
+</div>
+<div class="col-md-3">
+  <label  for="inputInicio" class="form-label">Fecha de inicio</label>
+  <input formControlName="inicio" type="date" class="form-control" id="inputInicio">
+  <div *ngIf="formCursoNuevo.controls['inicio'].errors?.['required']"></div>
+</div>
+<div class="span-congratulations">{{spanCongratulations}}</div>
+<div class="col-12 boton">
+<button mat-raised-button  [disabled]="formCursoNuevo.invalid">AGREGAR CURSO</button>
+</div>
+  </form>
+  <hr>
+</div>

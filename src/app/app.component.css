@@ -8,6 +8,7 @@ grid-template-areas: "header header header header"
                       "alumno alumno alumno alumno"
                       "curso curso curso curso"
                       "boton boton boton boton"
+                      "form-curso form-curso form-curso form-curso"
                       "footer footer footer footer";}
 
 .grid-header{ grid-area: header;
@@ -46,3 +47,4 @@ margin: auto;}
  {background-color: orange !important}
 
 
+ .grid-form-curso{grid-area: form-curso;}

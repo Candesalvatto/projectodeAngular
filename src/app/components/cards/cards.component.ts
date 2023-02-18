@@ -5,11 +5,11 @@ import { Subscription, Observable } from 'rxjs';
 
 
 @Component({
-  selector: 'app-section3',
-  templateUrl: './section3.component.html',
-  styleUrls: ['./section3.component.css']
+  selector: 'app-cards',
+  templateUrl: './cards.component.html',
+  styleUrls: ['./cards.component.css']
 })
-export class Section3Component implements OnInit, OnDestroy{
+export class cardsComponent implements OnInit, OnDestroy{
 
   cursos!:Curso[];
   suscript!: Subscription;
