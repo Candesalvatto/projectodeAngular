@@ -15,45 +15,44 @@
 </div>
 </div>
 </div>
-  <form class="row g-6" [formGroup]="formCursoNuevo"(ngSubmit)="agregarCursoNuevo()">
+  <form class="row g-6" [formGroup]="formCursoNuevo"(ngSubmit)="agregarCurso()">
 <div class="col-md-3">
   <label  for="inputTitulo" class="form-label">Titulo del Curso</label>
   <input formControlName="titulo" type="text" class="form-control" id="inputTitulo">
-  <div *ngIf="formCursoNuevo.controls['titulo'].errors?.['required']"></div>
+
 </div>
 <div class="col-md-3">
   <label  for="inputModalidad" class="form-label">Modalidad del Curso</label>
   <input formControlName="modalidad" type="text" class="form-control" id="inputModalidad">
-  <div *ngIf="formCursoNuevo.controls['modalidad'].errors?.['required']"></div>
+
 </div>
 <div class="col-md-3">
   <label  for="inputDuracion" class="form-label">Duración del Curso</label>
   <input formControlName="duracion" type="text" class="form-control" id="inputDuracion">
-  <div *ngIf="formCursoNuevo.controls['duracion'].errors?.['required']"></div>
+
 </div>
 <div class="col-md-3">
-  <label  for="inputCupo" class="form-label">Cupo del Curso</label>
-  <input formControlName="cupo" type="number" class="form-control" id="inputCupo">
-  <div *ngIf="formCursoNuevo.controls['cupo'].errors?.['required']"></div>
+  <mat-card-header>Cupo abierto</mat-card-header>
+  <mat-slide-toggle formControlName="cupo" class="example-margin"></mat-slide-toggle>
 </div>
 <div class="col-md-3">
   <label  for="inputProfesor" class="form-label">Nombre del Profesor</label>
   <input formControlName="profesor" type="text" class="form-control" id="inputProfesor">
-  <div *ngIf="formCursoNuevo.controls['profesor'].errors?.['required']"></div>
+
 </div>
 <div class="col-md-3">
   <label  for="inputClases" class="form-label">Cantidad de clases semanales</label>
   <input formControlName="clasesSemanales" type="number" class="form-control" id="inputClases">
-  <div *ngIf="formCursoNuevo.controls['clases'].errors?.['required']"></div>
+
 </div>
 <div class="col-md-3">
   <label  for="inputInicio" class="form-label">Fecha de inicio</label>
-  <input formControlName="inicio" type="date" class="form-control" id="inputInicio">
-  <div *ngIf="formCursoNuevo.controls['inicio'].errors?.['required']"></div>
+  <input formControlName="fechaInicio" type="date" class="form-control" id="inputInicio">
+
 </div>
 <div class="span-congratulations">{{spanCongratulations}}</div>
 <div class="col-12 boton">
-<button mat-raised-button  [disabled]="formCursoNuevo.invalid">AGREGAR CURSO</button>
+<button mat-raised-button type="submit">AGREGAR CURSO</button>
 </div>
   </form>
   <hr>

@@ -12,8 +12,8 @@ const routes: Routes = [
   //   { path: 'enseña-con-nosotros', component:  FormNuevoCursoComponent },
   //   { path: 'tabla-de-cursos', component: SectionCursosComponent},
   //   { path: 'editar', component: EditarCursoComponent },
+  //   { path: 'cards', component: cardsComponent },
   // ] },
-  // { path: 'cards', component: cardsComponent },
 ];
 
 @NgModule({

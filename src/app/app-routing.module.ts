@@ -14,11 +14,11 @@ import { EditarCursoComponent } from './cursos/components/editar-curso/editar-cu
 const routes: Routes = [
   { path: '', redirectTo: 'inicio', pathMatch: 'full'},
   {path: 'inicio', component: InicioComponent},
-  { path: 'cards', component: cardsComponent },
   { path:'formacion', children: [
     { path: 'enseña-con-nosotros', component:  FormNuevoCursoComponent },
     { path: 'tabla-de-cursos', component: SectionCursosComponent},
     { path: 'editar', component: EditarCursoComponent },
+    { path: 'cards', component: cardsComponent },
   ] },
   { path: 'noticias', component: SectionNoticiasComponent },
   { path: 'formulario-socios', component: FormSociosComponent },

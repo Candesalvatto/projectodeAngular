@@ -15,6 +15,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { CursosModule } from './cursos/cursos.module';
+import { CursosRoutingModule } from './cursos/cursos-routing.module';
+
 
 
 
@@ -31,7 +33,7 @@ import { CursosModule } from './cursos/cursos.module';
     SectionNoticiasComponent,
     FooterComponent,
     PagenotfoundComponent,
-    InicioComponent
+    InicioComponent,
   ],
 
   imports: [
@@ -40,7 +42,8 @@ import { CursosModule } from './cursos/cursos.module';
     BrowserAnimationsModule,
     MaterialModule,
     AppRoutingModule,
-    CursosModule
+    CursosModule,
+    CursosRoutingModule
   ],
 
   providers: [],

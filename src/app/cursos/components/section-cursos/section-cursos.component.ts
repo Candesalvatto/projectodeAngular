@@ -43,12 +43,12 @@ export class SectionCursosComponent implements OnInit, OnDestroy{
       ngOnDestroy(){
         this.suscript.unsubscribe();
       }
-      deleteCurso(curso:Curso) {
-        this.servicesDeCursos.deleteCurso(curso);
+      deleteCurso(id:number) {
+        this.servicesDeCursos.deleteCurso(id);
       }
 
-      // delete(curso:Curso){
-      //   this.servicesDeCursos.deleteCurso(curso);
+      // deleteCurso(curso:Curso) {
+      //   this.servicesDeCursos.deleteCurso(curso)
       // }
 
       goEdit(curso:Curso){

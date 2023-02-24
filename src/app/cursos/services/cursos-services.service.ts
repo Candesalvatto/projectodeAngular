@@ -71,19 +71,19 @@ export class CursosServicesService {
 
   }
 
-  // deleteCurso(id: number):void {
-  //   this.cursos = this.cursos.filter((curso: Curso) => curso.id != id);
-  //   this.cursos$.next(this.cursos);
-  //   console.log("Curso eliminado", this.cursos)
-  // }
-
-  deleteCurso(curso:Curso):void{
-    let i = this.cursos.findIndex((c:Curso)=>{c.id === curso.id });
-    if (i> -1){
-      this.cursos.splice(i,1);
-      this.cursos$.next(this.cursos)
-    }
+  deleteCurso(id: number):void {
+    this.cursos = this.cursos.filter((curso: Curso) => curso.id != id);
+    this.cursos$.next(this.cursos);
+    console.log("Curso eliminado", this.cursos)
   }
+
+  // deleteCurso(curso:Curso):void{
+  //   let i = this.cursos.findIndex((c:Curso)=>{c.id === curso.id });
+  //   if (i> -1){
+  //     this.cursos.splice(i,1);
+  //     this.cursos$.next(this.cursos)
+  //   }
+  // }
 
  editarCurso(curso: Curso):void {
   let i = this.cursos.findIndex((c:Curso)=>{c.id === curso.id });

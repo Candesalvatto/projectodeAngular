@@ -11,6 +11,7 @@ import { DirectivaEstilosDirective } from '../directives/directiva-estilos.direc
 import { FormatoBooleanoPipe } from '../pipes/formato-booleano.pipe';
 import { FormatoFechaHoraPipe } from '../pipes/formato-fecha-hora.pipe';
 import { EditarCursoComponent } from './components/editar-curso/editar-curso.component';
+import { DataCursoComponent } from './components/data-curso/data-curso.component';
 
 
 
@@ -24,7 +25,8 @@ import { EditarCursoComponent } from './components/editar-curso/editar-curso.com
   DirectivaEstilosDirective,
   FormatoFechaHoraPipe,
   FormatoBooleanoPipe,
-  EditarCursoComponent],
+  EditarCursoComponent,
+  DataCursoComponent],
 
   imports: [
     CommonModule,

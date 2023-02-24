@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ThemePalette } from '@angular/material/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Curso } from 'src/app/models/cursos';
 import { CursosServicesService } from '../../services/cursos-services.service';
@@ -12,6 +13,9 @@ import { CursosServicesService } from '../../services/cursos-services.service';
 export class EditarCursoComponent implements OnInit {
 
   formulario!: FormGroup;
+  color: ThemePalette = 'accent';
+  checked = false;
+  disabled = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -21,16 +25,18 @@ export class EditarCursoComponent implements OnInit {
 
 ngOnInit(): void {
   this.activatedRoute.paramMap.subscribe((parametros) => {
-    console.log(parametros);
+    console.log (parametros);
     this.formulario = new FormGroup({
-      cursoTitulo: new FormControl(parametros.get('cursoTitulo')),
+      id: new FormControl (parametros.get('id')),
+      titulo: new FormControl(parametros.get('titulo')),
       modalidad: new FormControl(parametros.get('modalidad')),
       duracion: new FormControl(parametros.get('duracion')),
       cupo: new FormControl(parametros.get('cupo' || false)),
       profesor: new FormControl(parametros.get('profesor')),
-      clases: new FormControl(parametros.get('clases')),
-      inicio: new FormControl(new Date(parametros.get('inicio') || '')),
-    })
+      clasesSemanales: new FormControl(parametros.get('clasesSemanales')),
+      fechaInicio: new FormControl(new Date(parametros.get('fechaInicio') || '')),
+    });
+
   })
 
 }
@@ -41,14 +47,20 @@ editarCurso(){
       modalidad: this.formulario.value.modalidad,
       duracion: this.formulario.value.duracion,
       cupo:this.formulario.value.cupo,
-      profesor:this.formulario.value.profesor,
+      profesor: {
+        nombre: 'Lucrecia',
+        curso: 'Puncion estereotaxica',
+        correo: 'lballa@gmail.com'
+      },
       clasesSemanales:this.formulario.value.clasesSemanales,
       fechaInicio:this.formulario.value.fechaInicio,
   }
 
   this.servicesDeCursos.editarCurso(curso);
-  this.router.navigate(['formacion/editar', curso]);
+  this.router.navigate(['formacion/tabla-de-cursos', curso]);
+  this.router.navigate(['formacion/cards', curso]);
 }
 }
+
 
 
