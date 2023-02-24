@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Curso } from '../../models/cursos';
-import { ServiceCursosService } from 'src/app/services/service-cursos.service';
+import { Curso } from '../../../models/cursos';
 import { Subscription, Observable } from 'rxjs';
+import { CursosServicesService } from '../../services/cursos-services.service';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class cardsComponent implements OnInit, OnDestroy{
   cursos$!:Observable<Curso[]>
 
   constructor(
-    private servicesDeCursos:ServiceCursosService
+    private servicesDeCursos:CursosServicesService
 
   ){}
 

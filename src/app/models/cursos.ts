@@ -2,6 +2,7 @@ import { Profesor } from './profesores';
 
 
 export interface Curso {
+  id: number;
   titulo: string;
   modalidad: string;
   duracion: string;

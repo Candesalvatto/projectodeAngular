@@ -37,8 +37,13 @@ this.formSocios = new FormGroup(controles);}
 
   asociarse(){
     if (this.formSocios.invalid){this.spanError= "Hay datos inválidos en el formulario"};
-    if (this.formSocios.valid){console.log("FORMULARIO VALIDO")};
-    console.log(this.formSocios);
+    if (this.formSocios.valid){console.log("FORMULARIO VALIDO");
+    console.log(this.formSocios, 'SOCIO AGREGADO')};
+
+
+
+
+
 
 
     //PRUEBAS DE VALIDACION

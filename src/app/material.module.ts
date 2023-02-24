@@ -9,6 +9,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 
+
 @NgModule({
   declarations: [],
   imports: [
@@ -17,14 +18,16 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
+
+
   ],
   exports: [
     MatTableModule,
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatToolbarModule
+    MatToolbarModule,
 
   ]
 })
