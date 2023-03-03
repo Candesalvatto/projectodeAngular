@@ -2,6 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Curso } from '../../../models/cursos';
 import { Subscription, Observable } from 'rxjs';
 import { CursosServicesService } from '../../services/cursos-services.service';
+import { LoguinService } from 'src/app/services/loguin.service';
+import { Sesion } from 'src/app/models/sesion';
 
 
 @Component({
@@ -16,7 +18,8 @@ export class cardsComponent implements OnInit, OnDestroy{
   cursos$!:Observable<Curso[]>
 
   constructor(
-    private servicesDeCursos:CursosServicesService
+    private servicesDeCursos:CursosServicesService,
+    private sesionService: LoguinService
 
   ){}
 
@@ -31,7 +34,8 @@ ngOnInit(): void {
   this.servicesDeCursos.obtenerCursosObservable().subscribe((cursos:Curso[])=>{
 
   this.cursos$=this.servicesDeCursos.obtenerCursosObservable();
-  this.cursos$.subscribe(()=>{  this.cursos= cursos;})
+  this.cursos$.subscribe(()=>{  this.cursos= cursos;});
+  this.sesionService.obtenerSesion().subscribe((sesion:Sesion)=> console.log('Estado de la sesion', sesion));
  })
 }
 

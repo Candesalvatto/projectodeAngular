@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Alumno} from 'src/app/models/alumnos';
 import {ServiceAlumnoService} from 'src/app/services/service-alumno.service';
 
@@ -8,7 +8,7 @@ import {ServiceAlumnoService} from 'src/app/services/service-alumno.service';
   templateUrl: './section-alumnos.component.html',
   styleUrls: ['./section-alumnos.component.css']
 })
-export class SectionAlumnosComponent {
+export class SectionAlumnosComponent implements OnInit{
 
   listaAlumnos!:Alumno[];
 
@@ -16,6 +16,10 @@ export class SectionAlumnosComponent {
   constructor(
     private servicesDeAlumnos:ServiceAlumnoService
   ){}
+
+  ngOnInit(): void {
+   this.listaAlumnos= this.servicesDeAlumnos.obtenerAlumno()
+  }
 
 
 

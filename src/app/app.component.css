@@ -1,4 +1,4 @@
-
+* {  font-family: 'Assistant', sans-serif;}
 
 .mat-toolbar{background-color: #002653;}
 
@@ -11,3 +11,6 @@
 
 .example-icon {border: none;
   background-color: transparent;}
+
+  .boton-sesion{font-size: 0.6em;
+  margin: 30px;}

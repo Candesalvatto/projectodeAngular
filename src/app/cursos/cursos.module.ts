@@ -5,7 +5,7 @@ import { SectionCursosComponent } from './components/section-cursos/section-curs
 import { FormNuevoCursoComponent } from './components/form-nuevo-curso/form-nuevo-curso.component';
 import { MaterialModule } from '../material.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CursosRoutingModule } from './cursos-routing.module';
+import { CursosRountingModule } from './cursos-rounting.module';
 import { CursosServicesService } from './services/cursos-services.service';
 import { DirectivaEstilosDirective } from '../directives/directiva-estilos.directive';
 import { FormatoBooleanoPipe } from '../pipes/formato-booleano.pipe';
@@ -30,9 +30,10 @@ import { DataCursoComponent } from './components/data-curso/data-curso.component
 
   imports: [
     CommonModule,
+    CursosRountingModule,
     ReactiveFormsModule,
     MaterialModule,
-    CursosRoutingModule],
+    ],
 
   providers:[CursosServicesService],
 })

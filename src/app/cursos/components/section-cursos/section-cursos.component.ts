@@ -4,6 +4,8 @@ import { Curso } from '../../../models/cursos';
 import { Subscription } from 'rxjs';
 import { CursosServicesService } from '../../services/cursos-services.service';
 import { Router } from '@angular/router';
+import { LoguinService } from 'src/app/services/loguin.service';
+import { Sesion } from '../../../models/sesion';
 
 @Component({
   selector: 'app-section-cursos',
@@ -22,7 +24,8 @@ export class SectionCursosComponent implements OnInit, OnDestroy{
 
       constructor(
         private servicesDeCursos:CursosServicesService,
-        private router: Router
+        private router: Router,
+        private sesionService: LoguinService
       ){}
 
 
@@ -32,6 +35,7 @@ export class SectionCursosComponent implements OnInit, OnDestroy{
         this.dataSource = new MatTableDataSource<Curso>();
         this.servicesDeCursos.obtenerCursosObservable().subscribe((cursos:Curso[])=>{
         this.dataSource.data=cursos;
+        this.sesionService.obtenerSesion().subscribe((sesion:Sesion)=> console.log('Estado de la sesion', sesion));
         let i = this.dataSource.data.findIndex((curso: Curso) => curso.id == cursos[0].id);
         this.dataSource.data[i] = cursos[0];});
         this.promesa.then((curso)=>{
@@ -52,7 +56,7 @@ export class SectionCursosComponent implements OnInit, OnDestroy{
       // }
 
       goEdit(curso:Curso){
-        this.router.navigate(['formacion/editar', curso])
+        this.router.navigate(['formacion/editar'])
       }
 
 

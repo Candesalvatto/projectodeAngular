@@ -1,6 +1,6 @@
 <mat-toolbar class="toolbar">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with a menu icon">
+    <mat-icon> menu </mat-icon>
   </button>
   <span class="example-spacer"></span>
   <a mat-button routerLink="inicio">INICIO</a>
@@ -11,6 +11,10 @@
   <a mat-button routerLink="formacion/tabla-de-cursos">ORGANIZACION</a>
   <a mat-button routerLink="footer">CONTACTO</a>
   <span class="example-spacer"></span>
+<ng-container *ngIf="sesion$ |async as sesion">
+  <a *ngIf="sesion.actividad" mat-button class="boton-sesion" routerLink="inicio-sesion">Iniciar Sesion</a>
+  <a *ngIf="sesion.usuarioActivo" mat-button class="boton-sesion" (click)="cerrarSesion()" >Cerrar Sesion</a>
+</ng-container>
   <button matbutton class="example-icon" (click)="irInicio()" aria-label="Example icon-button with share icon"><img class="logo" src="../assets/images/logo.png" alt="inicio" title="inicio"> </button>
 </mat-toolbar>
 <router-outlet></router-outlet>
