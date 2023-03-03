@@ -9,7 +9,7 @@ import { SesionGuard } from './guards/sesion.guard';
 
 
 const routes: Routes = [
-  {path: 'inicio', component: InicioComponent, canActivate: [SesionGuard]},
+  {path: 'inicio', component: InicioComponent},
   { path:'formacion',
   loadChildren: ()=> import('./cursos/cursos.module').then((modulo)=>modulo.CursosModule)},
   { path:'inicio-sesion', loadChildren:()=> import('./inicio-sesion/inicio-sesion.module').then((modulo)=> modulo.InicioSesionModule)},
