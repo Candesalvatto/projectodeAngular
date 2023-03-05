@@ -2,7 +2,7 @@ import { Profesor } from './profesores';
 
 
 export interface Curso {
-  id: number;
+  id: string;
   titulo: string;
   modalidad: string;
   duracion: string;

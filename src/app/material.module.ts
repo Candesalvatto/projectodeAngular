@@ -10,6 +10,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -27,7 +29,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatDatepickerModule,
     MatSlideToggleModule,
     MatNativeDateModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule
+
 
   ],
   exports: [
@@ -40,7 +44,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatDatepickerModule,
     MatSlideToggleModule,
     MatNativeDateModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule,
+    MatDialogModule
+
   ]
 })
 export class MaterialModule { }

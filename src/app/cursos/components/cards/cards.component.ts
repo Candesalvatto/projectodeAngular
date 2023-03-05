@@ -15,7 +15,8 @@ export class cardsComponent implements OnInit, OnDestroy{
 
   cursos!:Curso[];
   suscript!: Subscription;
-  cursos$!:Observable<Curso[]>
+  cursos$!:Observable<Curso[]>;
+  sesion$!: Observable<Sesion>
 
   constructor(
     private servicesDeCursos:CursosServicesService,
@@ -31,12 +32,14 @@ ngOnInit(): void {
 //this.cursos = cursos;
 //console.log('Promesa resuelta');
  //}).catch((error:any)=>{ console.log('Error en la promesa', error)})
-  this.servicesDeCursos.obtenerCursosObservable().subscribe((cursos:Curso[])=>{
+//   this.servicesDeCursos.obtenerCursosObservable().subscribe((cursos:Curso[])=>{
 
-  this.cursos$=this.servicesDeCursos.obtenerCursosObservable();
-  this.cursos$.subscribe(()=>{  this.cursos= cursos;});
-  this.sesionService.obtenerSesion().subscribe((sesion:Sesion)=> console.log('Estado de la sesion', sesion));
- })
+//   this.cursos$=this.servicesDeCursos.obtenerCursosObservable();
+//   this.cursos$.subscribe(()=>{  this.cursos= cursos;});
+//   this.sesionService.obtenerSesion().subscribe((sesion:Sesion)=> console.log('Estado de la sesion', sesion));
+//  })
+this.cursos$ = this.servicesDeCursos.obtenerCursos();
+this.sesion$ = this.sesionService.obtenerSesion();
 }
 
 ngOnDestroy(){

@@ -1,9 +1,7 @@
 .container-form{width: 70%;
-margin:50px  auto;
-border-top: 1px solid grey;
-border-bottom: 1px solid grey;
-padding: 80px 30px 40px 30px;
-color: #002653;}
+margin:20px auto;
+padding: 40px 30px 40px 30px;
+color: #fff;}
 
 .mat-mdc-raised-button
  {background-color: orange !important;
@@ -14,8 +12,10 @@ color: #002653;}
 text-align: center;
 align-items: center;}
 
-
-
 .example-margin {
   margin: 10px;
 }
+
+h1{
+text-align: center;
+align-items: center;}

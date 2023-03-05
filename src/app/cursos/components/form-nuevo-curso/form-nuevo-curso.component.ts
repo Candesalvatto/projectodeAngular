@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ThemePalette } from '@angular/material/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Curso } from 'src/app/models/cursos';
+import { Profesor } from 'src/app/models/profesores';
 import { CursosServicesService } from '../../services/cursos-services.service';
+import { ProfesorServiceService } from '../../services/profesor-service.service';
 
 @Component({
   selector: 'app-form-nuevo-curso',
@@ -34,51 +36,57 @@ export class FormNuevoCursoComponent implements OnInit {
 //   }
 // }
 formCursoNuevo!: FormGroup;
-  spanCongratulations!: string;
-  color: ThemePalette = 'accent';
-  checked = false;
-  disabled = false;
+spanCongratulations!: string;
+profesor$!: Observable<Profesor[]>;
 
 
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private servicesDeCursos: CursosServicesService,
-    private router: Router
+    private router: Router,
+    private profesores: ProfesorServiceService
   ){}
 
 
   ngOnInit(): void {
+    this.profesor$ = this.profesores.obtenerProfesor();
     this.activatedRoute.paramMap.subscribe((parametros) => {
       this.formCursoNuevo = new FormGroup({
-        id: new FormControl,
-        titulo: new FormControl,
-        modalidad: new FormControl,
-        duracion: new FormControl,
-        cupo: new FormControl,
-        profesor: new FormControl,
-        clasesSemanales: new FormControl,
-        fechaInicio: new FormControl,
+        titulo: new FormControl(''),
+        modalidad: new FormControl(''),
+        duracion: new FormControl(''),
+        cupo: new FormControl(false),
+        profesor: new FormControl({}),
+        clasesSemanales: new FormControl(''),
+        fechaInicio: new FormControl(''),
       })
     })
 
   }
   agregarCurso(){
     let cursoNuevo: Curso = {
-      id: this.formCursoNuevo.value.id,
-      titulo: this.formCursoNuevo.value.id,
-      modalidad: this.formCursoNuevo.value.id,
-      duracion: this.formCursoNuevo.value.id,
-      cupo:this.formCursoNuevo.value.id,
-      profesor:this.formCursoNuevo.value.id,
-      clasesSemanales:this.formCursoNuevo.value.id,
-      fechaInicio:this.formCursoNuevo.value.id,
+      id: '',
+      titulo: this.formCursoNuevo.value.titulo,
+      modalidad: this.formCursoNuevo.value.modalidad,
+      duracion: this.formCursoNuevo.value.duracion,
+      cupo:this.formCursoNuevo.value.cupo,
+      profesor:this.formCursoNuevo.value.profesor,
+      clasesSemanales:this.formCursoNuevo.value.clasesSemanales,
+      fechaInicio:this.formCursoNuevo.value.fechaInicio,
   }
-  this.servicesDeCursos.agregarCurso(cursoNuevo);
-  this.router.navigate(['formacion/tabla-de-cursos', cursoNuevo]);
-  if (this.formCursoNuevo.valid){this.spanCongratulations= 'Felicidades! Tu curso ha sido agregado con éxito'};
-  console.log(cursoNuevo)
+
+  this.servicesDeCursos.agregarCurso(cursoNuevo).subscribe((curso: Curso) => {
+    ///if (this.formCursoNuevo.valid){this.spanCongratulations= 'Felicidades! Tu curso ha sido agregado con éxito'};
+    console.log(cursoNuevo)
+    this.router.navigate(['formacion/tabla-de-cursos']);
+  });
+//   this.servicesDeCursos.agregarCurso(cursoNuevo);
+//  this.router.navigate(['formacion/tabla-de-cursos', cursoNuevo]);
+//   if (this.formCursoNuevo){this.spanCongratulations= 'Felicidades! Tu curso ha sido agregado con éxito'};
+//   console.log(cursoNuevo)
   }
+
 
 }
 

@@ -6,12 +6,12 @@ import { FormNuevoCursoComponent } from './components/form-nuevo-curso/form-nuev
 import { MaterialModule } from '../material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CursosRountingModule } from './cursos-rounting.module';
-import { CursosServicesService } from './services/cursos-services.service';
 import { DirectivaEstilosDirective } from '../directives/directiva-estilos.directive';
 import { FormatoBooleanoPipe } from '../pipes/formato-booleano.pipe';
 import { FormatoFechaHoraPipe } from '../pipes/formato-fecha-hora.pipe';
 import { EditarCursoComponent } from './components/editar-curso/editar-curso.component';
 import { DataCursoComponent } from './components/data-curso/data-curso.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -35,6 +35,7 @@ import { DataCursoComponent } from './components/data-curso/data-curso.component
     MaterialModule,
     ],
 
-  providers:[CursosServicesService],
+
+  providers:[],
 })
 export class CursosModule { }

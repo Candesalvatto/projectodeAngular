@@ -14,6 +14,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AppRountingModule } from './app-rounting.module';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CursosServicesService } from './cursos/services/cursos-services.service';
+import { InfoBecasComponent } from './components/info-becas/info-becas.component';
 
 
 
@@ -31,6 +34,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
     FooterComponent,
     PagenotfoundComponent,
     InicioComponent,
+    InfoBecasComponent,
 
   ],
 
@@ -40,9 +44,21 @@ import { InicioComponent } from './components/inicio/inicio.component';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClientModule,
+  ],
+  exports:[ HttpClientModule,
+    navbarComponent,
+    sidebarComponent,
+    SectionSliderComponent,
+    SectionAlumnosComponent,
+    FormSociosComponent,
+    SectionNoticiasComponent,
+    FooterComponent,
+    PagenotfoundComponent,
+    InicioComponent,
   ],
 
-  providers: [],
+  providers: [CursosServicesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

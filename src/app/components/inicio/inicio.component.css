@@ -1,7 +1,7 @@
 .grid-container {display: grid;
   grid-template-areas:/* "header header header header" */
                        "slider slider slider slider"
-                       "menu card card card"
+                       "menu becas becas becas"
                        "noticias noticias noticias noticias"
                        "form form form form"
                        "alumno alumno alumno alumno"
@@ -14,6 +14,7 @@
  color: #fff;
  background-color: #002653;
  font-family:  'Assistant', sans-serif;} */
+.grid-becas{grid-area: becas;}
 
  .grid-menu{grid-area: menu;
    font-family:  'Assistant', sans-serif;}

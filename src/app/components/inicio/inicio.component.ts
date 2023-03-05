@@ -19,12 +19,13 @@ export class InicioComponent {
 
   agregarCurso() {
     let cursoCreado: Curso = {
-      id: 0,
+      id: '',
       titulo: 'Nuevo Curso',
       modalidad: 'Indefinido',
       duracion: 'Indefinido',
       cupo: false,
       profesor: {
+        id: '',
         nombre: 'Indefinido',
         curso: 'Nuevo Curso',
         correo: ''
