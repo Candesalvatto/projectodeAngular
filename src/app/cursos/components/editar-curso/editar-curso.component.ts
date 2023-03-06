@@ -58,6 +58,7 @@ editarCurso(){
 
   this.servicesDeCursos.editarCurso(curso).subscribe((curso:Curso)=>{
   this.dialogRef.close(curso);});
+  console.log('Curso editado')
 }
 }
 

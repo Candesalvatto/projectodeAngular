@@ -74,7 +74,6 @@ export class SectionCursosComponent implements OnInit, OnDestroy{
         this.dialog.open(EditarCursoComponent, {
           data: curso
         }).afterClosed().subscribe((curso: Curso) => {
-          alert(`${curso.titulo} editado satisfactoriamente`);
           this.cursos$ = this.servicesDeCursos.obtenerCursos();
         });
       };

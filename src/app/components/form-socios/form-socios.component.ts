@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Socio } from '../../models/socio'
 
 
 @Component({
@@ -7,14 +8,16 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   templateUrl: './form-socios.component.html',
   styleUrls: ['./form-socios.component.css']
 })
-export class FormSociosComponent {
-  formSocios: FormGroup;
+export class FormSociosComponent implements OnInit{
+
+  formSocios!: FormGroup;
   spanError!: string;
+socios!: Socio[]
 
 
-constructor(){
+ngOnInit(){
   let regexCorreo: string ="^[^@]+@[^@]+\.[a-zA-Z]{2,}$";
-  let controles: any = {
+  this.formSocios= new FormGroup({
   nombre: new FormControl ('', [Validators.required]),
   apellido: new FormControl ('', [Validators.required]),
   direccion: new FormControl ('', []),
@@ -31,39 +34,34 @@ constructor(){
   matricula: new FormControl ('', [Validators.required]),
 
 
+});
 }
 
-this.formSocios = new FormGroup(controles);}
+asociarse(){
+  console.log(this.formSocios.value);
+  let socio: Socio ={
+    nombre: this.formSocios.value.nombre,
+    apellido: this.formSocios.value.apellido,
+    direccion: this.formSocios.value.direccion,
+    dni: this.formSocios.value.dni,
+    pais: this.formSocios.value.pais,
+    ciudad: this.formSocios.value.ciudad,
+    codPostal: this.formSocios.value.codPostal,
+    telefono: this.formSocios.value.telefono,
+    email: this.formSocios.value.email,
+    contrasena: this.formSocios.value.contrasena,
+    profesion: this.formSocios.value.profesion,
+    cargo:this.formSocios.value.cargo,
+    puesto: this.formSocios.value.puesto,
+    matricula: this.formSocios.value.matricula,
+}
+this.socios.push(socio);
+console.log( 'nuevo socio', socio);
+if (this.formSocios.invalid){this.spanError= "Hay datos inválidos en el formulario"};
+if (this.formSocios.valid){console.log("FORMULARIO VALIDO");
+console.log(this.formSocios, 'SOCIO AGREGADO')};
+}
 
-  asociarse(){
-    if (this.formSocios.invalid){this.spanError= "Hay datos inválidos en el formulario"};
-    if (this.formSocios.valid){console.log("FORMULARIO VALIDO");
-    console.log(this.formSocios, 'SOCIO AGREGADO')};
-
-
-
-
-
-
-
-    //PRUEBAS DE VALIDACION
-  /*  if(this.formSocios.controls['nombre'].errors?.['required']){
-      console.log("El nombre es obligatorio")};
-      if(this.formSocios.controls['apellido'].errors?.['required']){
-        console.log("El apellido es obligatorio")};
-      if(this.formSocios.controls['dni'].errors?.['required']){
-          console.log("El dni es obligatorio")};
-      if(this.formSocios.controls['dni'].invalid){
-          console.log("El dni es sumamente obligatorio")};
-      if(this.formSocios.controls['email'].errors?.['pattern']){
-              console.log("El email es invalido")};
-      if(this.formSocios.controls['contrasena'].errors?.['minlength']){
-        console.log("La contraseña es invalida")};
-        if(this.formSocios.controls['contrasena'].errors?.['required']){
-          console.log("La contraseña esta vacia")};
-      if(this.formSocios.controls['matricula'].errors?.['required']){
-          console.log("La matricula es obligatoria")};
-*/
 
 }
-}
+
