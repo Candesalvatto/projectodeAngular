@@ -10,8 +10,8 @@ import { environment } from 'src/environment/environment';
 export class ProfesorServiceService {
 
   constructor(
-    private http: HttpClient
-  ) { }
+     private http: HttpClient
+   ) { }
 
   obtenerProfesor(): Observable<Profesor[]>{
     return this.http.get<Profesor[]>(`${environment.apiURL}/profesor`)

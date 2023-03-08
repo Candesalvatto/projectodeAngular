@@ -20,4 +20,5 @@ describe('SectionCursosComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup,  Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Curso } from 'src/app/models/cursos';
@@ -53,13 +53,13 @@ profesor$!: Observable<Profesor[]>;
     this.profesor$ = this.profesores.obtenerProfesor();
     this.activatedRoute.paramMap.subscribe((parametros) => {
       this.formCursoNuevo = new FormGroup({
-        titulo: new FormControl(''),
-        modalidad: new FormControl(''),
-        duracion: new FormControl(''),
-        cupo: new FormControl(false),
-        profesor: new FormControl({}),
-        clasesSemanales: new FormControl(''),
-        fechaInicio: new FormControl(''),
+        titulo: new FormControl('',[Validators.required]),
+        modalidad: new FormControl('',[Validators.required]),
+        duracion: new FormControl('',[Validators.required]),
+        cupo: new FormControl(false, [Validators.required]),
+        profesor: new FormControl({}, [Validators.required]),
+        clasesSemanales: new FormControl('', [Validators.required]),
+        fechaInicio: new FormControl('', [Validators.required]),
       })
     })
 
@@ -75,6 +75,8 @@ profesor$!: Observable<Profesor[]>;
       clasesSemanales:this.formCursoNuevo.value.clasesSemanales,
       fechaInicio:this.formCursoNuevo.value.fechaInicio,
   }
+
+
 
   this.servicesDeCursos.agregarCurso(cursoNuevo).subscribe((curso: Curso) => {
     ///if (this.formCursoNuevo.valid){this.spanCongratulations= 'Felicidades! Tu curso ha sido agregado con éxito'};

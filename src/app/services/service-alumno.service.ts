@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Alumno } from '../models/alumnos';
 
 @Injectable({
@@ -45,16 +46,28 @@ export class ServiceAlumnoService {
     }
   ];
 
+  private alumno$!: BehaviorSubject<Alumno[]>;
+
   constructor() { }
 
   obtenerAlumno(): Array<Alumno>{
     return this.listaAlumnos;
   }
 
+
+  obtenerAlumnoObservable(): Observable<Alumno[]>{
+
+    return this.alumno$.asObservable();
+  }
+
+
   agregarAlumno(alumno: Alumno){
     this.listaAlumnos.push(alumno);
     console.log('Alumno agregado', this.listaAlumnos);
   }
+
+
+
 
   }
 

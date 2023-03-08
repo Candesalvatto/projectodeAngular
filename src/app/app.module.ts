@@ -56,6 +56,8 @@ import { InfoBecasComponent } from './components/info-becas/info-becas.component
     FooterComponent,
     PagenotfoundComponent,
     InicioComponent,
+    MaterialModule,
+
   ],
 
   providers: [CursosServicesService],

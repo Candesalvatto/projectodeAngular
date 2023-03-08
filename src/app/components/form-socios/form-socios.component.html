@@ -1,7 +1,7 @@
 <div class="container-form">
   <h1> ¿Querés asociarte?</h1>
   <h2> Completá el formulario con tu información y formá parte de nosotros.</h2>
-<form class="row g-3" novalidate [formGroup]="formSocios"(ngSubmit)="asociarse()">
+<form class="row g-3" novalidate [formGroup]="formSocios"(ngSubmit)="agregarSocio()">
   <div class="col-md-6">
     <label for="inputName" class="form-label">Nombre</label>
     <input formControlName="nombre" type="name" class="form-control" id="inputName">
@@ -69,7 +69,7 @@
   </div>
   <div class="span-error">{{spanError}}</div>
   <div class="col-12 boton">
-    <button mat-raised-button (click)="asociarse()">ASOCIARME</button>
+    <button mat-raised-button>ASOCIARME</button>
   </div>
 </form>
 </div>

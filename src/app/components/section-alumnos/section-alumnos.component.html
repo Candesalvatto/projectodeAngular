@@ -22,6 +22,9 @@
       <ul *ngFor=" let Alumno of listaAlumnos">
         <li *ngIf="Alumno.socio === true"> {{Alumno.nombre +" "+ Alumno.apellido}} <span>SOCIO</span></li>
       </ul>
+      <ul *ngFor=" let Socio of listaSocios">
+        <li> {{Socio.nombre +" "+ Socio.apellido}} <span>SOCIO</span></li>
+      </ul>
     </div>
   </div>
 </div>

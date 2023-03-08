@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Alumno} from 'src/app/models/alumnos';
+import { Socio } from 'src/app/models/socio';
 import {ServiceAlumnoService} from 'src/app/services/service-alumno.service';
+import { ServicesSociosService } from 'src/app/services/services-socios.service';
 
 
 @Component({
@@ -11,14 +13,17 @@ import {ServiceAlumnoService} from 'src/app/services/service-alumno.service';
 export class SectionAlumnosComponent implements OnInit{
 
   listaAlumnos!:Alumno[];
+  listaSocios! : Socio [];
 
 
   constructor(
-    private servicesDeAlumnos:ServiceAlumnoService
+    private servicesDeAlumnos:ServiceAlumnoService,
+    private serviceDeSocios: ServicesSociosService,
   ){}
 
   ngOnInit(): void {
-   this.listaAlumnos= this.servicesDeAlumnos.obtenerAlumno()
+  this.listaAlumnos= this.servicesDeAlumnos.obtenerAlumno()
+  this.listaSocios=this.serviceDeSocios.obtenerSocio()
   }
 
 

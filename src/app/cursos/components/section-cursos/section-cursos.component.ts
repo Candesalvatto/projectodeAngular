@@ -8,7 +8,7 @@ import { LoguinService } from 'src/app/services/loguin.service';
 import { Sesion } from '../../../models/sesion';
 import { EditarCursoComponent } from '../editar-curso/editar-curso.component';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { cursos } from '../../../services/data-cursos.service';
+
 
 @Component({
   selector: 'app-section-cursos',

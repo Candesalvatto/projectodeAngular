@@ -20,7 +20,7 @@ export class EditarCursoComponent implements OnInit {
 
 
   constructor(
-    private activatedRoute: ActivatedRoute,
+    // private activatedRoute: ActivatedRoute,
     private servicesDeCursos: CursosServicesService,
     private router: Router,
     private dialogRef: MatDialogRef<EditarCursoComponent>,
