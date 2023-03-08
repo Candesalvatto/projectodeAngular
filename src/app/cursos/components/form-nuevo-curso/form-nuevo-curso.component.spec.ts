@@ -21,7 +21,7 @@ describe('FormNuevoCursoComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('Prueba si el formulario esta vacio o lleno', () => {
+  it('Prueba si el formulario esta vacio', () => {
     let formulario = component.formCursoNuevo;
 
     expect(formulario.valid).toBeFalse();

@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { FormSociosComponent } from './form-socios.component';
 
 describe('FormSociosComponent', () => {
@@ -17,7 +16,7 @@ describe('FormSociosComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('El componente se crea correctamente', () => {
     expect(component).toBeTruthy();
   });
 });

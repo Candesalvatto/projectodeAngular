@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ServiceAlumnoService } from 'src/app/services/service-alumno.service';
 import { Socio } from '../../models/socio'
 import { Observable } from 'rxjs';
 import { ServicesSociosService } from 'src/app/services/services-socios.service';
@@ -74,7 +73,7 @@ agregarSocio(){
 this.serviceDeSocios.agregarSocio(socioNuevo);
 console.log ('agregando socio nuevo', socioNuevo);
 this.listaSocios.push(socioNuevo);
-this.listaSocios = this.serviceDeSocios.obtenerSocio();
+
 
 
 

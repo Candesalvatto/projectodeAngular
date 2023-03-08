@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { ActivatedRoute, RouterModule, Routes } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormSociosComponent } from './components/form-socios/form-socios.component';
 import { InicioComponent } from './components/inicio/inicio.component';
@@ -23,7 +23,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [ RouterModule.forRoot(routes)],
+  exports: [RouterModule],
+  providers: [ActivatedRoute],
 })
 export class AppRountingModule { }

@@ -11,6 +11,8 @@ import { FormatoFechaHoraPipe } from '../pipes/formato-fecha-hora.pipe';
 import { EditarCursoComponent } from './components/editar-curso/editar-curso.component';
 import { CursosServicesService } from './services/cursos-services.service';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { AppRountingModule } from '../app-rounting.module';
 
 
 
@@ -33,9 +35,10 @@ import { HttpClientModule } from '@angular/common/http';
     CursosRountingModule,
     ReactiveFormsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
     ],
-    
+
 exports:[HttpClientModule],
 
   providers:[CursosServicesService],

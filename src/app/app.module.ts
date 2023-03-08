@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { navbarComponent } from './components/navbar/navbar.component';
@@ -17,6 +17,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CursosServicesService } from './cursos/services/cursos-services.service';
 import { InfoBecasComponent } from './components/info-becas/info-becas.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -41,11 +43,13 @@ import { InfoBecasComponent } from './components/info-becas/info-becas.component
 
   imports: [
     BrowserModule,
+    RouterModule,
     AppRountingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    CommonModule,
   ],
   exports:[ HttpClientModule,
     navbarComponent,
@@ -58,10 +62,12 @@ import { InfoBecasComponent } from './components/info-becas/info-becas.component
     PagenotfoundComponent,
     InicioComponent,
     MaterialModule,
+    RouterModule,
+    AppRountingModule,
 
   ],
 
   providers: [CursosServicesService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
