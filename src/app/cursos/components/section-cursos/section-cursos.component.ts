@@ -81,7 +81,7 @@ export class SectionCursosComponent implements OnInit, OnDestroy{
       deleteCurso(curso:Curso) {
         this.servicesDeCursos.deleteCurso(curso).subscribe((curso: Curso) => {
           this.cursos$ = this.servicesDeCursos.obtenerCursos();
-      });
+      })
 
     }
   }

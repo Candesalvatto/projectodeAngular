@@ -22,6 +22,7 @@ import { InfoBecasComponent } from './components/info-becas/info-becas.component
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

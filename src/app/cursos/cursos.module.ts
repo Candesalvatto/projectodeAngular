@@ -10,6 +10,8 @@ import { FormatoBooleanoPipe } from '../pipes/formato-booleano.pipe';
 import { FormatoFechaHoraPipe } from '../pipes/formato-fecha-hora.pipe';
 import { EditarCursoComponent } from './components/editar-curso/editar-curso.component';
 import { CursosServicesService } from './services/cursos-services.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -31,8 +33,10 @@ import { CursosServicesService } from './services/cursos-services.service';
     CursosRountingModule,
     ReactiveFormsModule,
     MaterialModule,
+    HttpClientModule
     ],
-
+    
+exports:[HttpClientModule],
 
   providers:[CursosServicesService],
 })
