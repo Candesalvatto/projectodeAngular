@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
-import { ActivatedRoute, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormSociosComponent } from './components/form-socios/form-socios.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { SectionNoticiasComponent } from './components/section-noticias/section-noticias.component';
-import { SesionGuard } from './guards/sesion.guard';
+
+
 
 
 const routes: Routes = [
@@ -18,13 +19,10 @@ const routes: Routes = [
   { path: 'footer', component: FooterComponent },
   { path: '', redirectTo: 'inicio', pathMatch: 'full'},
   { path: '**', component: PagenotfoundComponent },
-
-
 ];
 
 @NgModule({
   imports: [ RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [ActivatedRoute],
 })
 export class AppRountingModule { }

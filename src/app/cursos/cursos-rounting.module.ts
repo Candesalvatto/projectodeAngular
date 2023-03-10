@@ -6,6 +6,7 @@ import { EditarCursoComponent } from './components/editar-curso/editar-curso.com
 import { FormNuevoCursoComponent } from './components/form-nuevo-curso/form-nuevo-curso.component';
 import { SectionCursosComponent } from './components/section-cursos/section-cursos.component';
 import { AdminGuard } from '../guards/admin.guard';
+import { CursosServicesService } from './services/cursos-services.service';
 
 
 
@@ -21,6 +22,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [CursosServicesService],
 })
 export class CursosRountingModule { }

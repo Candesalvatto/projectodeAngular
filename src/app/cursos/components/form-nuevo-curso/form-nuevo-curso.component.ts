@@ -14,30 +14,10 @@ import { ProfesorServiceService } from '../../services/profesor-service.service'
 })
 export class FormNuevoCursoComponent implements OnInit {
 
-//   formCursoNuevo: FormGroup;
-//   spanCongratulations!: string;
-
-//   constructor(){
-//     let controles:any ={
-//       titulo: new FormControl ('', [Validators.required]),
-//       modalidad: new FormControl ('', [Validators.required]),
-//       duracion:new FormControl ('', [Validators.required]),
-//       cupo:new FormControl ('', [Validators.required]),
-//       profesor:new FormControl ('', [Validators.required]),
-//       clases:new FormControl ('', [Validators.required]),
-//       inicio:new FormControl ('', [Validators.required]),
-//     }
-//     this.formCursoNuevo = new FormGroup(controles);}
-
-//   agregarCursoNuevo(){
-//     if (this.formCursoNuevo.valid){this.spanCongratulations= 'Felicidades! Tu curso ha sido agregado con éxito'};
-//     console.log('curso agregado con exito', this.formCursoNuevo);
-
-//   }
-// }
 formCursoNuevo!: FormGroup;
 spanCongratulations!: string;
 profesor$!: Observable<Profesor[]>;
+cursos!: Curso[]
 
 
 
@@ -76,7 +56,7 @@ profesor$!: Observable<Profesor[]>;
       fechaInicio:this.formCursoNuevo.value.fechaInicio,
   }
 
-
+  this.cursos.push(cursoNuevo);
 
   this.servicesDeCursos.agregarCurso(cursoNuevo).subscribe((curso: Curso) => {
     ///if (this.formCursoNuevo.valid){this.spanCongratulations= 'Felicidades! Tu curso ha sido agregado con éxito'};

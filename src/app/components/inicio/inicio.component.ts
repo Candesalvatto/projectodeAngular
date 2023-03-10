@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { Curso } from '../../models/cursos';
-import { CursosServicesService } from 'src/app/cursos/services/cursos-services.service';
-
 
 @Component({
   selector: 'app-inicio',
@@ -10,31 +7,4 @@ import { CursosServicesService } from 'src/app/cursos/services/cursos-services.s
 })
 export class InicioComponent {
 
-  constructor(
-    private servicesDeCursos:CursosServicesService,
-
-  ){};
-
-
-
-  agregarCurso() {
-    let cursoCreado: Curso = {
-      id: '',
-      titulo: 'Nuevo Curso',
-      modalidad: 'Indefinido',
-      duracion: 'Indefinido',
-      cupo: false,
-      profesor: {
-        id: '',
-        nombre: 'Indefinido',
-        curso: 'Nuevo Curso',
-        correo: ''
-      },
-      clasesSemanales: 0,
-      fechaInicio: new Date,
-    };
-
-
-  this.servicesDeCursos.agregarCurso(cursoCreado);
-  }
 }

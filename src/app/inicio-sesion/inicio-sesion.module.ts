@@ -4,6 +4,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
 import { InicioSesionRoutingModule } from './inicio-sesion-routing.module';
 import { InicioSesionComponent } from './components/inicio-sesion.component';
+import { InicioSesionService } from './services/inicio-sesion.service';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations:[
@@ -15,8 +17,10 @@ import { InicioSesionComponent } from './components/inicio-sesion.component';
     InicioSesionRoutingModule,
     ReactiveFormsModule,
     MaterialModule,
+    RouterModule
     ],
+    exports:[RouterModule],
 
-  providers:[],
+  providers:[InicioSesionService],
 })
 export class InicioSesionModule { }

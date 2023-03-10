@@ -19,6 +19,9 @@ import { CursosServicesService } from './cursos/services/cursos-services.service
 import { InfoBecasComponent } from './components/info-becas/info-becas.component';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ServicesSociosService } from './services/services-socios.service';
+import { LoguinService } from './services/loguin.service';
+import { ServiceAlumnoService } from './services/service-alumno.service';
 
 
 
@@ -39,6 +42,8 @@ import { RouterModule } from '@angular/router';
     InicioComponent,
     InfoBecasComponent,
 
+
+
   ],
 
   imports: [
@@ -50,8 +55,11 @@ import { RouterModule } from '@angular/router';
     MaterialModule,
     HttpClientModule,
     CommonModule,
+
+
   ],
   exports:[ HttpClientModule,
+    RouterModule,
     navbarComponent,
     sidebarComponent,
     SectionSliderComponent,
@@ -62,12 +70,15 @@ import { RouterModule } from '@angular/router';
     PagenotfoundComponent,
     InicioComponent,
     MaterialModule,
-    RouterModule,
-    AppRountingModule,
+
 
   ],
 
-  providers: [CursosServicesService],
+  providers: [CursosServicesService,
+    ServicesSociosService,
+    LoguinService,
+    ServiceAlumnoService],
+
   bootstrap: [AppComponent],
 })
 export class AppModule { }

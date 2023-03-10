@@ -8,9 +8,7 @@ describe('AppComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports:[
-        MaterialModule,
-      ],
+      imports:[MaterialModule],
       declarations: [
         AppComponent,
       ],
@@ -21,15 +19,14 @@ describe('AppComponent', () => {
     fixture.detectChanges();
   });
 
-    it('El componente se crea correctamente', () => {
-    expect(component).toBeTruthy();
+
+
+  it('should create the app', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeFalsy();
   });
 
-  // it('should create the app', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.componentInstance;
-  //   expect(app).toBeTruthy();
-  // });
 
   // it(`should have as title 'course-project'`, () => {
   //   const fixture = TestBed.createComponent(AppComponent);

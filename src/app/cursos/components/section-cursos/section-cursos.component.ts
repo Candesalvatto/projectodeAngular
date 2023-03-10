@@ -62,13 +62,7 @@ export class SectionCursosComponent implements OnInit, OnDestroy{
       ngOnDestroy(){
         this.suscript.unsubscribe();
       }
-      // deleteCurso(id:number) {
-      //   this.servicesDeCursos.deleteCurso(id);
-      // }
 
-      // deleteCurso(curso:Curso) {
-      //   this.servicesDeCursos.deleteCurso(curso)
-      // }
 
       goEdit(curso:Curso){
         this.dialog.open(EditarCursoComponent, {
@@ -80,7 +74,8 @@ export class SectionCursosComponent implements OnInit, OnDestroy{
 
       deleteCurso(curso:Curso) {
         this.servicesDeCursos.deleteCurso(curso).subscribe((curso: Curso) => {
-          this.cursos$ = this.servicesDeCursos.obtenerCursos();
+        //  this.cursos$ = this.servicesDeCursos.obtenerCursos();
+        this.ngOnInit();
       })
 
     }

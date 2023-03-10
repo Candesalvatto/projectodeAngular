@@ -1,25 +1,17 @@
 .grid-container {display: grid;
-  grid-template-areas:/* "header header header header" */
+  grid-template-areas:
                        "slider slider slider slider"
                        "menu becas becas becas"
                        "noticias noticias noticias noticias"
                        "form form form form"
                        "alumno alumno alumno alumno"
                        "curso curso curso curso"
-                       "boton boton boton boton"
-                       "form-curso form-curso form-curso form-curso"
                        "footer footer footer footer";}
 
- /* .grid-header{ grid-area: header;
- color: #fff;
- background-color: #002653;
- font-family:  'Assistant', sans-serif;} */
+
 .grid-becas{grid-area: becas;}
 
  .grid-menu{grid-area: menu;
-   font-family:  'Assistant', sans-serif;}
-
- .grid-card{ grid-area: card;
    font-family:  'Assistant', sans-serif;}
 
  .grid-slider{grid-area: slider;}
@@ -29,9 +21,6 @@
  .grid-form {grid-area: form;
    font-family:  'Assistant', sans-serif;}
 
- .grid-cursos {grid-area:curso;
- width: 100%;
- color: #002653;}
 
  .grid-noticias{ grid-area: noticias;
  }
