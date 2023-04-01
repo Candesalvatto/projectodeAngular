@@ -30,7 +30,7 @@ export const reducer = createReducer(
 
    // 2 maneras distintas de hacer las declaraciones, mismo resultado
 
-on (StateFeatureActions.agregarCursoState,(state, {cursos: Curso})=> {
+on (StateFeatureActions.agregarCursoState,(state, {curso: Curso})=> {
       return state;
 }),
 on (StateFeatureActions.editarCursoState,(state, {cursos: Curso})=> {

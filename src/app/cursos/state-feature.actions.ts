@@ -13,7 +13,7 @@ export const finishStateFeatures = createAction(
 
 export const agregarCursoState = createAction(
   '[Listado de Cursos] Agregando curso',
-  props<{ cursos: Curso[] }>()
+  props<{ curso: Curso }>()
 );
 
 

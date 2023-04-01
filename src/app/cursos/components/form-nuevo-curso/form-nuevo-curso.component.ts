@@ -61,7 +61,7 @@ cursos!: Curso[]
   }
 
   this.cursos.push(cursoNuevo);
-  this.store.dispatch(agregarCursoState);
+  this.store.dispatch(agregarCursoState({curso: cursoNuevo}));
 
   this.servicesDeCursos.agregarCurso(cursoNuevo).subscribe((curso: Curso) => {
     ///if (this.formCursoNuevo.valid){this.spanCongratulations= 'Felicidades! Tu curso ha sido agregado con éxito'};

@@ -17,7 +17,7 @@ export class InicioSesionService {
     private http: HttpClient) {}
 
   iniciarSesion(user:User): Observable<Sesion>{
- return this.http.get<User[]>(`${environment.authURL}/usuarios`).pipe(
+ return this.http.get<User[]>(`${environment.authURL}/users`).pipe(
   map((usuarios: User[]) => {
     let userValid = usuarios.find((u: User) => u.usuario === user.usuario && u.contraseña === user.contraseña); // valido credenciales con find
 

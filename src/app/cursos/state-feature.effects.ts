@@ -25,9 +25,9 @@ export class StateFeatureCursosEffects {
   agregarCurso$= createEffect(()=>{
     return this.actions$.pipe(
       ofType(agregarCursoState),
-      concatMap(({cursos})=>{
-        return this.cursos.agregarCurso(cursos).pipe(
-          map((cursos:Curso)=>{
+      concatMap(({curso})=>{
+        return this.cursos.agregarCurso(curso).pipe(
+          map((curso:Curso)=>{
             this.router.navigate(['formacion/tabla-de-cursos']);
             return loadStateFeatures();
             })

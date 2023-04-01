@@ -13,9 +13,9 @@ import { CursosServicesService } from './services/cursos-services.service';
 
 const routes: Routes = [
   { path:'', canActivateChild: [SesionGuard] ,children: [
-    { path: 'enseña-con-nosotros', component:  FormNuevoCursoComponent },
-    { path: 'tabla-de-cursos', component: SectionCursosComponent},
-    { path: 'editar', component: EditarCursoComponent },
+    { path: 'enseña-con-nosotros', component:  FormNuevoCursoComponent, canActivate: [AdminGuard] },
+    { path: 'tabla-de-cursos', component: SectionCursosComponent, canActivate: [AdminGuard]},
+    { path: 'editar', component: EditarCursoComponent, canActivate: [AdminGuard] },
     { path: 'cards', component: cardsComponent },
   ] }
 ];
