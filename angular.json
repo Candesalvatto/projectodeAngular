@@ -28,11 +28,10 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.css"
-
             ],
-            "scripts": ["node_modules/bootstrap/dist/js/bootstrap.min.js"
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
-
           },
           "configurations": {
             "production": {
@@ -100,5 +99,10 @@
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "@ngrx/schematics"
+    ]
   }
 }

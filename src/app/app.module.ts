@@ -1,4 +1,4 @@
-import { NgModule} from '@angular/core';
+import { NgModule, isDevMode} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { navbarComponent } from './components/navbar/navbar.component';
@@ -22,6 +22,9 @@ import { RouterModule } from '@angular/router';
 import { ServicesSociosService } from './services/services-socios.service';
 import { LoguinService } from './services/loguin.service';
 import { ServiceAlumnoService } from './services/service-alumno.service';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
 
 
 
@@ -55,6 +58,9 @@ import { ServiceAlumnoService } from './services/service-alumno.service';
     MaterialModule,
     HttpClientModule,
     CommonModule,
+    StoreModule.forRoot({},{}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+    EffectsModule.forRoot([]),
 
 
   ],
@@ -70,7 +76,6 @@ import { ServiceAlumnoService } from './services/service-alumno.service';
     PagenotfoundComponent,
     InicioComponent,
     MaterialModule,
-
 
   ],
 

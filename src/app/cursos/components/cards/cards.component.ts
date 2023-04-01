@@ -4,6 +4,11 @@ import { Subscription, Observable } from 'rxjs';
 import { CursosServicesService } from '../../services/cursos-services.service';
 import { LoguinService } from 'src/app/services/loguin.service';
 import { Sesion } from 'src/app/models/sesion';
+import { selectorCursosCargados, selectorCargandoCursos } from '../../state-feature.selectors';
+import { loadStateFeatures, finishStateFeatures } from '../../state-feature.actions';
+import { Store } from '@ngrx/store';
+import { CursoState } from 'src/app/cursos/state-feature.reducer';
+
 
 
 @Component({
@@ -16,30 +21,27 @@ export class cardsComponent implements OnInit, OnDestroy{
   cursos!:Curso[];
   suscript!: Subscription;
   cursos$!:Observable<Curso[]>;
-  sesion$!: Observable<Sesion>
+  sesion$!: Observable<Sesion>;
+  loadind$!: Observable<Boolean>;
 
   constructor(
     private servicesDeCursos:CursosServicesService,
-    private sesionService: LoguinService
+    private sesionService: LoguinService,
+    private store: Store<CursoState>
 
   ){}
 
 
 
 ngOnInit(): void {
-  //this.cursos = this.servicesDeCursos.obtenerCursos();
-//this.servicesDeCursos.obtenerCursos().then((cursos:Curso[])=>{
-//this.cursos = cursos;
-//console.log('Promesa resuelta');
- //}).catch((error:any)=>{ console.log('Error en la promesa', error)})
-//   this.servicesDeCursos.obtenerCursosObservable().subscribe((cursos:Curso[])=>{
-
-//   this.cursos$=this.servicesDeCursos.obtenerCursosObservable();
-//   this.cursos$.subscribe(()=>{  this.cursos= cursos;});
-//   this.sesionService.obtenerSesion().subscribe((sesion:Sesion)=> console.log('Estado de la sesion', sesion));
-//  })
-this.cursos$ = this.servicesDeCursos.obtenerCursos();
+  //this.loadind$ =this.store.select(selectorCargandoCursos); //cargo el spiner
+  this.store.dispatch(loadStateFeatures()); // actualizo mi cursoState
+// this.servicesDeCursos.obtenerCursos().subscribe((cursos: Curso[])=> {  //obtengo los cursos, me suscribo
+//   this.store.dispatch(finishStateFeatures({cursos: cursos})) // paso la info de los cursos q tengo cargados
+// });
 this.sesion$ = this.sesionService.obtenerSesion();
+//this.cursos$= this.store.select(selectorCursosCargados);
+
 }
 
 ngOnDestroy(){

@@ -12,12 +12,10 @@ import { EditarCursoComponent } from './components/editar-curso/editar-curso.com
 import { CursosServicesService } from './services/cursos-services.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { AppRountingModule } from '../app-rounting.module';
-
-
-
-
-
+import { StoreModule } from '@ngrx/store';
+import { reducer, stateFeatureFeatureKey } from './state-feature.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { StateFeatureCursosEffects } from './state-feature.effects';
 
 
 
@@ -37,6 +35,9 @@ import { AppRountingModule } from '../app-rounting.module';
     MaterialModule,
     HttpClientModule,
     RouterModule,
+    StoreModule.forFeature(stateFeatureFeatureKey, reducer),
+    EffectsModule.forFeature([StateFeatureCursosEffects])
+
     ],
 
 exports:[HttpClientModule],

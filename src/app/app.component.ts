@@ -3,6 +3,10 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { LoguinService } from './services/loguin.service';
 import { Sesion } from './models/sesion';
+import { AuthState } from './inicio-sesion/auth.reducer';
+import { select, Store } from '@ngrx/store';
+import { selectorAuthState, selectorSesionActiva, selectorSesionState, selectorUsuarioActivo } from './inicio-sesion/auth.selectors';
+import { User } from './models/user';
 
 
 @Component({
@@ -12,17 +16,19 @@ import { Sesion } from './models/sesion';
 })
 export class AppComponent implements OnInit{
   title = 'course-project';
-  sesion$!: Observable <Sesion>
-
+  sesionActiva$!: Observable <Boolean>
+  usuarioActivo$!: Observable <User | undefined>
 
   constructor(
     private router: Router,
-    private sesion: LoguinService,
+    private authStore: Store <AuthState>,
 
   ){};
 
 ngOnInit(): void {
-  this.sesion$= this.sesion.obtenerSesion();
+  this.sesionActiva$= this.authStore.select(selectorSesionActiva);
+  this.usuarioActivo$= this.authStore.select(selectorUsuarioActivo);
+
 }
 
 irInicio(){
@@ -35,7 +41,7 @@ cerrarSesion(){
     usuarioActivo: undefined,
     actividad: true,
   }
-  this.sesion.cerrarSesion(sesionCerrada);
+  //this.sesion.cerrarSesion(sesionCerrada);
   this.router.navigate(['inicio-sesion']);
 }
 }

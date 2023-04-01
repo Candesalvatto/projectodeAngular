@@ -1,5 +1,7 @@
-
-<div class="card">
+<div class="spinner" *ngIf="loadind$ | async">
+  <mat-spinner color="accent"></mat-spinner>
+</div>
+<div class="card" *ngIf="!(loadind$ | async)">
   <div class="card-body tarjeta" *ngFor="let curso of cursos$ | async">
     <mat-card class="color-card">
         <mat-card-header class="align">

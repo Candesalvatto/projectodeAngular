@@ -29,3 +29,6 @@ font-size: 1.1em;}
 .cupo-cerrado{color:grey ;
   font-weight: 600;
   font-size: 1.1em}
+
+  .spinner{width: 100px;
+  margin: 300px auto;}
