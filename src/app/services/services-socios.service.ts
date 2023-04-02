@@ -10,17 +10,20 @@ export class ServicesSociosService {
   listaSocios: Socio[] = [];
   private socio$!: BehaviorSubject<Socio[]>;
 
-  constructor() { this.socio$ = new BehaviorSubject <Socio[]> (this.listaSocios); }
+  constructor() {
+    this.socio$ = new BehaviorSubject<Socio[]>(this.listaSocios);
+    }
 
-  obtenerSocio(): Array<Socio>{ return this.listaSocios;}
+  obtenerSocio(): Array<Socio> {
+    return this.listaSocios
+  }
 
-  agregarSocio(socio: Socio): void{
+  agregarSocio(socio: Socio): void {
     this.listaSocios.push(socio)
+  }
 
-      }
-
-      obtenerSocioObservable(): Observable<Socio[]>{
-        return this.socio$.asObservable();
-      }
+  obtenerSocioObservable(): Observable<Socio[]> {
+    return this.socio$.asObservable();
+  }
 
 }

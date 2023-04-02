@@ -5,8 +5,8 @@ import { User } from '../../models/user';
 import { InicioSesionService } from '../services/inicio-sesion.service';
 import { Sesion } from '../../models/sesion';
 import { Store } from '@ngrx/store';
-import { AuthState } from '../auth.reducer';
-import { loadSesion } from '../auth.actions';
+import { AuthState } from '../state/auth.reducer';
+import { loadSesion } from '../state/auth.actions';
 import { Subscription } from 'rxjs';
 
 

@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Sesion } from '../models/sesion';
+import { Sesion } from '../../models/sesion';
 
 
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LoguinService } from 'src/app/services/loguin.service';
+import { LoguinService } from 'src/app/inicio-sesion/services/loguin.service';
 import { User } from '../../models/user';
 import { Sesion } from '../../models/sesion';
 import { map, Observable } from 'rxjs';

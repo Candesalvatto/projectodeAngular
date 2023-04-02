@@ -1,13 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Curso } from '../../../models/cursos';
 import { Subscription, Observable } from 'rxjs';
-import { CursosServicesService } from '../../services/cursos-services.service';
-import { LoguinService } from 'src/app/services/loguin.service';
+import { LoguinService } from 'src/app/inicio-sesion/services/loguin.service';
 import { Sesion } from 'src/app/models/sesion';
-import { selectorCursosCargados, selectorCargandoCursos } from '../../state-feature.selectors';
-import { loadStateFeatures, finishStateFeatures } from '../../state-feature.actions';
+import { selectorCursosCargados, selectorCargandoCursos } from '../../state/state-feature.selectors';
+import { loadStateFeatures } from '../../state/state-feature.actions';
 import { Store } from '@ngrx/store';
-import { CursoState } from 'src/app/cursos/state-feature.reducer';
+import { CursoState } from '../../state/state-feature.reducer';
 
 
 
@@ -25,7 +24,6 @@ export class cardsComponent implements OnInit, OnDestroy{
   loadind$!: Observable<Boolean>;
 
   constructor(
-    private servicesDeCursos:CursosServicesService,
     private sesionService: LoguinService,
     private store: Store<CursoState>
 
@@ -34,13 +32,10 @@ export class cardsComponent implements OnInit, OnDestroy{
 
 
 ngOnInit(): void {
-  //this.loadind$ =this.store.select(selectorCargandoCursos); //cargo el spiner
+  this.loadind$ =this.store.select(selectorCargandoCursos); //cargo el spiner
   this.store.dispatch(loadStateFeatures()); // actualizo mi cursoState
-// this.servicesDeCursos.obtenerCursos().subscribe((cursos: Curso[])=> {  //obtengo los cursos, me suscribo
-//   this.store.dispatch(finishStateFeatures({cursos: cursos})) // paso la info de los cursos q tengo cargados
-// });
 this.sesion$ = this.sesionService.obtenerSesion();
-//this.cursos$= this.store.select(selectorCursosCargados);
+this.cursos$= this.store.select(selectorCursosCargados);
 
 }
 

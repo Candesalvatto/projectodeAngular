@@ -7,6 +7,9 @@ import { Curso } from 'src/app/models/cursos';
 import { Profesor } from 'src/app/models/profesores';
 import { CursosServicesService } from '../../services/cursos-services.service';
 import { ProfesorServiceService } from '../../services/profesor-service.service';
+import { Store } from '@ngrx/store';
+import { CursoState } from '../../state/state-feature.reducer';
+import { editarCursoState } from '../../state/state-feature.actions';
 
 @Component({
   selector: 'app-editar-curso',
@@ -23,6 +26,7 @@ export class EditarCursoComponent implements OnInit {
     // private activatedRoute: ActivatedRoute,
     private servicesDeCursos: CursosServicesService,
     private router: Router,
+    private store: Store <CursoState>,
     private dialogRef: MatDialogRef<EditarCursoComponent>,
     private profesores: ProfesorServiceService,
     @Inject(MAT_DIALOG_DATA) public curso: Curso
@@ -56,8 +60,10 @@ editarCurso(){
       fechaInicio:this.formulario.value.fechaInicio,
   };
 
+  this.store.dispatch(editarCursoState( { curso }));
   this.servicesDeCursos.editarCurso(curso).subscribe((curso:Curso)=>{
   this.dialogRef.close(curso);});
+
   console.log('Curso editado')
 }
 }

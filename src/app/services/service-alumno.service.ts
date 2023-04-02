@@ -48,7 +48,7 @@ export class ServiceAlumnoService {
 
   private alumno$!: BehaviorSubject<Alumno[]>;
 
-  constructor() { }
+  constructor() {}
 
   obtenerAlumno(): Array<Alumno>{
     return this.listaAlumnos;

@@ -12,7 +12,7 @@ export const selectorSesionState = createSelector(
 
 export const selectorSesionActiva = createSelector(
   selectorAuthState,
-  (state) => state.sesion.sesionActiva
+  (state) => state ? state.sesion.sesionActiva: false
 );
 
 export const selectorUsuarioActivo = createSelector(

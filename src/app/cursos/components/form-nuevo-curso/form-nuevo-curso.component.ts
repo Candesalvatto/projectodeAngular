@@ -4,11 +4,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Curso } from 'src/app/models/cursos';
 import { Profesor } from 'src/app/models/profesores';
-import { CursosServicesService } from '../../services/cursos-services.service';
 import { ProfesorServiceService } from '../../services/profesor-service.service';
 import { Store } from '@ngrx/store';
-import { CursoState } from 'src/app/cursos/state-feature.reducer';
-import { agregarCursoState } from '../../state-feature.actions';
+import { CursoState } from '../../state/state-feature.reducer';
+import { agregarCursoState } from '../../state/state-feature.actions';
 
 @Component({
   selector: 'app-form-nuevo-curso',
@@ -26,7 +25,6 @@ cursos!: Curso[]
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private servicesDeCursos: CursosServicesService,
     private router: Router,
     private profesores: ProfesorServiceService,
     private store: Store <CursoState>
@@ -60,17 +58,8 @@ cursos!: Curso[]
       fechaInicio:this.formCursoNuevo.value.fechaInicio,
   }
 
-  this.cursos.push(cursoNuevo);
+  console.log('curso agregado');
   this.store.dispatch(agregarCursoState({curso: cursoNuevo}));
-
-  this.servicesDeCursos.agregarCurso(cursoNuevo).subscribe((curso: Curso) => {
-    ///if (this.formCursoNuevo.valid){this.spanCongratulations= 'Felicidades! Tu curso ha sido agregado con éxito'};
-
-  });
-//   this.servicesDeCursos.agregarCurso(cursoNuevo);
-//  this.router.navigate(['formacion/tabla-de-cursos', cursoNuevo]);
-//   if (this.formCursoNuevo){this.spanCongratulations= 'Felicidades! Tu curso ha sido agregado con éxito'};
-//   console.log(cursoNuevo)
   }
 
 

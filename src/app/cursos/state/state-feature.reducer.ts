@@ -33,10 +33,10 @@ export const reducer = createReducer(
 on (StateFeatureActions.agregarCursoState,(state, {curso: Curso})=> {
       return state;
 }),
-on (StateFeatureActions.editarCursoState,(state, {cursos: Curso})=> {
+on (StateFeatureActions.editarCursoState,(state, {curso: Curso})=> {
   return state;
 }),
-on (StateFeatureActions.eliminarCursoState,(state, {cursos: Curso})=> {
+on (StateFeatureActions.eliminarCursoState,(state, {curso: Curso})=> {
   return state;
 })
 )

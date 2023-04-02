@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Socio } from '../../models/socio'
 import { Observable } from 'rxjs';
 import { ServicesSociosService } from 'src/app/services/services-socios.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -24,6 +25,7 @@ constructor(
   private activatedRoute: ActivatedRoute,
   private router: Router,
   private serviceDeSocios: ServicesSociosService,
+  private snackBar: MatSnackBar
 ){}
 
 
@@ -73,10 +75,10 @@ agregarSocio(){
 this.serviceDeSocios.agregarSocio(socioNuevo);
 console.log ('agregando socio nuevo', socioNuevo);
 this.listaSocios.push(socioNuevo);
-
-
-
-
+this.snackBar.open(`Felicitaciones! ${socioNuevo.nombre} ${socioNuevo.apellido} Ya eres socio de nuestra comunidad`)
+setTimeout(() => {
+  this.router.navigate(['/inicio']);
+}, 2000);
 }
 
 

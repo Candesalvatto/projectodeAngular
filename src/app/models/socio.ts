@@ -1,5 +1,5 @@
 export interface Socio
- {
+  {
   nombre: string,
   apellido: string,
   direccion: string,
@@ -14,4 +14,4 @@ export interface Socio
   cargo: string,
   puesto: string,
   matricula: string,
- }
+  }

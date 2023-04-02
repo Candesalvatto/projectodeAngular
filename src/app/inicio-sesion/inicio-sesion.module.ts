@@ -7,7 +7,7 @@ import { InicioSesionComponent } from './components/inicio-sesion.component';
 import { InicioSesionService } from './services/inicio-sesion.service';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
-import { authFeatureKey, reducer } from './auth.reducer';
+import { authFeatureKey, reducer } from './state/auth.reducer';
 
 
 @NgModule({

@@ -7,10 +7,10 @@ export const selectFeatureState = createFeatureSelector<fromStateFeature.CursoSt
 
 export const selectorCargandoCursos = createSelector(
   selectFeatureState,
-  (state:fromStateFeature.CursoState)=>{ state.loadind}
+  (state:fromStateFeature.CursoState)=>{return state.loadind}
 );
 export const selectorCursosCargados = createSelector(
   selectFeatureState,
-  (state:fromStateFeature.CursoState)=>{ state.cursos}
+  (state:fromStateFeature.CursoState)=>{return state.cursos}
 )
 

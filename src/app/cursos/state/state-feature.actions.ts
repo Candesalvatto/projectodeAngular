@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Curso } from '../models/cursos';
+import { Curso } from '../../models/cursos';
 
 
 export const loadStateFeatures = createAction(
@@ -19,12 +19,12 @@ export const agregarCursoState = createAction(
 
 export const editarCursoState = createAction(
   '[Listado de Cursos] Editando curso',
-  props<{ cursos: Curso[] }>()
+  props<{ curso: Curso }>()
 );
 
 export const eliminarCursoState = createAction(
   '[Listado de Cursos] Curso eliminado',
-  props<{ cursos: Curso[] }>()
+  props<{ curso: Curso }>()
 );
 
 

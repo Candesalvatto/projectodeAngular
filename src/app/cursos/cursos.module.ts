@@ -13,9 +13,9 @@ import { CursosServicesService } from './services/cursos-services.service';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
-import { reducer, stateFeatureFeatureKey } from './state-feature.reducer';
+import { reducer, stateFeatureFeatureKey } from './state/state-feature.reducer';
 import { EffectsModule } from '@ngrx/effects';
-import { StateFeatureCursosEffects } from './state-feature.effects';
+import { StateFeatureCursosEffects } from './state/state-feature.effects';
 
 
 
@@ -37,7 +37,6 @@ import { StateFeatureCursosEffects } from './state-feature.effects';
     RouterModule,
     StoreModule.forFeature(stateFeatureFeatureKey, reducer),
     EffectsModule.forFeature([StateFeatureCursosEffects])
-
     ],
 
 exports:[HttpClientModule],

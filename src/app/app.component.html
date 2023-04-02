@@ -9,8 +9,8 @@
   <a mat-button routerLink="footer">CONTACTO</a>
   <span class="example-spacer"></span>
 <ng-container>
-  <a *ngIf="!(usuarioActivo$ | async)" mat-button class="boton-sesion" routerLink="inicio-sesion">Iniciar Sesion</a>
-  <a *ngIf= "usuarioActivo$ | async" mat-button class="boton-sesion" (click)="cerrarSesion()" >Cerrar Sesion</a>
+  <a *ngIf="!(sesionActiva$ | async)" mat-button class="boton-sesion" routerLink="inicio-sesion">Iniciar Sesion</a>
+  <a *ngIf= "sesionActiva$ | async" mat-button class="boton-sesion" (click)="cerrarSesion()" >Cerrar Sesion</a>
 </ng-container>
   <button matbutton class="example-icon" (click)="irInicio()" aria-label="Example icon-button with share icon"><img class="logo" src="../assets/images/logo.png" alt="inicio" title="inicio"> </button>
 </mat-toolbar>

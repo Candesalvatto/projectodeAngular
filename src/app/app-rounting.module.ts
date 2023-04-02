@@ -7,8 +7,6 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
 import { SectionNoticiasComponent } from './components/section-noticias/section-noticias.component';
 
 
-
-
 const routes: Routes = [
   {path: 'inicio', component: InicioComponent},
   { path:'formacion',
@@ -25,4 +23,5 @@ const routes: Routes = [
   imports: [ RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
+
 export class AppRountingModule { }
