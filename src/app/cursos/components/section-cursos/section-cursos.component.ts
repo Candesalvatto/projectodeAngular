@@ -10,8 +10,9 @@ import { EditarCursoComponent } from '../editar-curso/editar-curso.component';
 import { MatDialog } from '@angular/material/dialog';
 import { CursoState } from '../../state/state-feature.reducer';
 import { Store } from '@ngrx/store';
-import { eliminarCursoState } from '../../state/state-feature.actions';
+import { eliminarCursoState, loadStateFeatures } from '../../state/state-feature.actions';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { selectorCargandoCursos } from '../../state/state-feature.selectors';
 
 
 @Component({
@@ -26,7 +27,8 @@ export class SectionCursosComponent implements OnInit, OnDestroy{
       columnas: string[] = ['titulo', 'modalidad', 'duracion', 'cupo', 'profesor', 'clasesSemanales','fechaInicio','acciones'];
       curso!: Curso[];
       cursos$!:Observable<Curso[]>;
-      sesion$!: Observable<Sesion>
+      sesion$!: Observable<Sesion>;
+      loadind$!: Observable<Boolean>;
 
 
 
@@ -43,7 +45,9 @@ export class SectionCursosComponent implements OnInit, OnDestroy{
 
       ngOnInit(): void {
         this.cursos$ = this.servicesDeCursos.obtenerCursos();
-        this.sesion$ = this.sesionService.obtenerSesion()
+        this.sesion$ = this.sesionService.obtenerSesion();
+        this.loadind$ =this.store.select(selectorCargandoCursos);
+        this.store.dispatch(loadStateFeatures()); 
 
 
         this.dataSource = new MatTableDataSource<Curso>();

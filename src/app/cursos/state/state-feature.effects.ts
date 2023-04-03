@@ -59,8 +59,11 @@ return this.cursos.editarCurso(curso).pipe(
         return this.cursos.deleteCurso(curso).pipe(
           map((curso: Curso)=>{
             this.snackBar.open(`${curso.titulo} eliminado satisfactoriamente`);
-            this.router.navigate(['formacion/tabla-de-cursos']);
+            setTimeout(() => {
+              this.router.navigate(['formacion/cards']);
+            }, 2000);
             return loadStateFeatures();
+
           })
         )
       })

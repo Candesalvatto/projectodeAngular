@@ -26,3 +26,6 @@ tr {
     border-color: rgba(0, 0, 0, 0.2) !important;
     border: 1px solid;
 }
+
+.spinner{width: 100px;
+  margin: 300px auto;}

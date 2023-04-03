@@ -1,6 +1,11 @@
 <div class="spinner" *ngIf="loadind$ | async">
   <mat-spinner color="accent"></mat-spinner>
 </div>
+<div class="container">
+  <h1>Conocé nuestros cursos</h1>
+  <h2>¡Porqué elegir nuestros cursos?</h2>
+  <p>Nuestros cursos son avalados por la Sociedad Mundial de Radiología. A fines de lograr que tu capacitación sea grata y a la altura de del cremiento de información que hay. Brindamos capacitaciones de la modalidad que te quede mas práctica, con profesionales aptos en su área e implementando información de aparatología moderna.</p>
+</div>
 <div class="card" *ngIf="!(loadind$ | async)">
   <div class="card-body tarjeta" *ngFor="let curso of cursos$ | async">
     <mat-card class="color-card">

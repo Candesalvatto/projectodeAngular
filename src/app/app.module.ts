@@ -19,16 +19,13 @@ import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { navbarComponent } from './components/navbar/navbar.component';
-import { sidebarComponent } from './components/sidebar/sidebar.component';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    navbarComponent,
-    sidebarComponent,
     SectionSliderComponent,
     SectionAlumnosComponent,
     FormSociosComponent,
@@ -55,8 +52,6 @@ import { sidebarComponent } from './components/sidebar/sidebar.component';
 
   exports:[ HttpClientModule,
     RouterModule,
-    navbarComponent,
-    sidebarComponent,
     SectionSliderComponent,
     SectionAlumnosComponent,
     FormSociosComponent,
