@@ -22,11 +22,9 @@ constructor(
       return this.authStore.select(selectorSesionState).pipe(
         map((sesion:Sesion)=>{
           if(sesion.sesionActiva){
-            console.log('Se ha iniciado una sesion')
             return true
           }
           else if(sesion.usuarioActivo?.admin){
-            console.log('Se ha iniciado una sesion de adm')
             return true
           }
           else {
@@ -43,7 +41,6 @@ constructor(
         if(sesion.sesionActiva){
           return true
         } else {
-          console.log('tienes que loguearte')
           this.router.navigate(['inicio-sesion'])
           return false}
       })
@@ -57,7 +54,6 @@ constructor(
           if(sesion.sesionActiva){
             return true
           } else {
-            console.log('tienes que loguearte')
             this.router.navigate(['inicio-sesion'])
             return false}
         })

@@ -47,12 +47,11 @@ export class SectionCursosComponent implements OnInit, OnDestroy{
         this.cursos$ = this.servicesDeCursos.obtenerCursos();
         this.sesion$ = this.sesionService.obtenerSesion();
         this.loadind$ =this.store.select(selectorCargandoCursos);
-        this.store.dispatch(loadStateFeatures()); 
+        this.store.dispatch(loadStateFeatures());
 
 
         this.dataSource = new MatTableDataSource<Curso>();
         this.suscript = this.servicesDeCursos.obtenerCursos().subscribe((cursos: Curso[]) => {
-          console.log("Datos de la tabla de cursos");
           this.dataSource.data = cursos;
         });
       }
@@ -71,7 +70,6 @@ export class SectionCursosComponent implements OnInit, OnDestroy{
 
       deleteCurso(curso:Curso) {
             this.store.dispatch(eliminarCursoState({ curso }));
-            this.router.navigate(['formacion/tabla-de-cursos']);
       }
     }
 

@@ -23,9 +23,7 @@ export class EditarCursoComponent implements OnInit {
 
 
   constructor(
-    // private activatedRoute: ActivatedRoute,
     private servicesDeCursos: CursosServicesService,
-    private router: Router,
     private store: Store <CursoState>,
     private dialogRef: MatDialogRef<EditarCursoComponent>,
     private profesores: ProfesorServiceService,
@@ -64,7 +62,6 @@ editarCurso(){
   this.servicesDeCursos.editarCurso(curso).subscribe((curso:Curso)=>{
   this.dialogRef.close(curso);});
 
-  console.log('Curso editado')
 }
 }
 

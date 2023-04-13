@@ -1,0 +1,80 @@
+<h1 mat-dialog-title>EDITAR CURSO: {{socio.nombre +''+ socio.apellido}} </h1>
+<div mat-dialog-content>
+<div class="container-form">
+  <form [formGroup]="formulario" (ngSubmit)="editarSocio()">
+    <div class="row">
+
+    <div class="col-md-3">
+      <label  for="inputSocio" class="form-label">Socio</label>
+      <input  matInput formControlName="nombre" id="inputSocio" title="label">
+    </div>
+
+    <div class="col-md-3">
+      <label  for="inputDireccion" class="form-label">Direccion</label>
+      <input matInput formControlName="direccion"  title="label" id="inputDireccion">
+    </div>
+
+    <div class="col-md-3">
+      <label  for="inputDni" class="form-label">Dni</label>
+      <input matInput formControlName="dni"  id="inputDni" title="label">
+    </div>
+
+    <div class="col-md-3">
+      <label  for="inputPais" class="form-label">Pais</label>
+      <input matInput formControlName="pais"  id="inputPais" title="label">
+    </div>
+
+
+    <div class="col-md-3">
+      <label  for="inputCiudad" class="form-label">Ciudad</label>
+      <input matInput formControlName="ciudad"  id="inputCiudad" title="label">
+    </div>
+
+
+    <div class="col-md-3">
+      <label  for="inputCodPostal" class="form-label"> Codigo Postal</label>
+      <input matInput formControlName="codPostal" type="number" class="form-control" id="inputCodPostal" title="label">
+    </div>
+
+    <div class="col-md-3">
+      <label  for="inputTelefono" class="form-label"> Telefono </label>
+      <input matInput formControlName="telefono" type="number" class="form-control" id="inputTelefono" title="label">
+    </div>
+
+    <div class="col-md-3">
+      <label  for="inputEmail" class="form-label"> Email </label>
+      <input matInput formControlName="email" type="email" class="form-control" id="inputEmail" title="label">
+    </div>
+
+    <div class="col-md-3">
+      <label  for="inputContrasena" class="form-label"> Contraseña</label>
+      <input matInput formControlName="contrasena" type="text" class="form-control" id="inputContrasena" title="label">
+    </div>
+    <div class="col-md-3">
+      <label  for="inputProfesion" class="form-label"> Profesion</label>
+      <input matInput formControlName="profesion" type="text" class="form-control" id="inputProfesion" title="label">
+    </div>
+    <div class="col-md-3">
+      <label  for="inputCargo" class="form-label"> Cargo</label>
+      <input matInput formControlName="cargo" type="text" class="form-control" id="inputCargo" title="label">
+    </div>
+    <div class="col-md-3">
+      <label  for="inputPuesto" class="form-label"> Puesto</label>
+      <input matInput formControlName="puesto" type="text" class="form-control" id="inputPuesto" title="label">
+    </div>
+    <div class="col-md-3">
+      <label  for="inputMatricula" class="form-label"> Matricula</label>
+      <input matInput formControlName="matricula" type="number" class="form-control" id="inputMatricula" title="label">
+    </div>
+
+  </div>
+  </form>
+
+</div>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button matDialogClose mat-raised-button>Cerrar</button>
+  <button mat-raised-button color="primary" (click)="editarSocio()">Editar</button>
+</div>
+

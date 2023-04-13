@@ -26,7 +26,7 @@ export class StateFeatureCursosEffects {
       concatMap(({curso})=>{
         return this.cursos.agregarCurso(curso).pipe(  //se incorpora en mockapi
           map((curso:Curso)=>{
-            this.snackBar.open(`${curso.titulo} agregado satisfactoriamente`)
+            this.snackBar.open(`${curso.titulo} agregado satisfactoriamente`,'', {duration: 2000})
             setTimeout(() => {
               this.router.navigate(['formacion/cards']);
             }, 2000);
@@ -43,7 +43,7 @@ export class StateFeatureCursosEffects {
       concatMap(({ curso })=>{
 return this.cursos.editarCurso(curso).pipe(
   map((curso: Curso)=>{
-    this.snackBar.open(`${curso.titulo} editado satisfactoriamente`)
+    this.snackBar.open(`${curso.titulo} editado satisfactoriamente`,'', {duration: 2000})
     this.router.navigate(['formacion/tabla-de-cursos']);
     return loadStateFeatures()
   })
@@ -58,7 +58,7 @@ return this.cursos.editarCurso(curso).pipe(
       concatMap(({ curso })=>{
         return this.cursos.deleteCurso(curso).pipe(
           map((curso: Curso)=>{
-            this.snackBar.open(`${curso.titulo} eliminado satisfactoriamente`);
+            this.snackBar.open(`${curso.titulo} eliminado satisfactoriamente`,'', {duration: 2000});
             setTimeout(() => {
               this.router.navigate(['formacion/cards']);
             }, 2000);

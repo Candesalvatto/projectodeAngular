@@ -24,11 +24,10 @@ export class AdminGuard implements CanActivate, CanActivateChild {
       return this.authStore.select(selectorSesionState).pipe(
         map((sesion:Sesion)=>{
           if(sesion.usuarioActivo?.admin){
-            console.log('Se ha iniciado sesion de admin')
             return true
           }
           else  {
-            this.snackBar.open('Esta seccion es solo para Administrador')
+            this.snackBar.open('Esta seccion es solo para Administrador','', {duration: 2000})
             return false}
 
         })

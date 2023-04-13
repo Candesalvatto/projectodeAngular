@@ -62,8 +62,7 @@ export class ServiceAlumnoService {
 
 
   agregarAlumno(alumno: Alumno){
-    this.listaAlumnos.push(alumno);
-    console.log('Alumno agregado', this.listaAlumnos);
+    this.listaAlumnos.push(alumno)
   }
 
 

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-data-curso',
-  templateUrl: './data-curso.component.html',
-  styleUrls: ['./data-curso.component.css']
+  selector: 'app-data-socios',
+  templateUrl: './data-socios.component.html',
+  styleUrls: ['./data-socios.component.css']
 })
-export class DataCursoComponent implements OnInit {
+export class DataSociosComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute
@@ -17,5 +17,4 @@ export class DataCursoComponent implements OnInit {
 
     })
   }
-  }
-
+}

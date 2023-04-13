@@ -58,7 +58,6 @@ cursos!: Curso[]
       fechaInicio:this.formCursoNuevo.value.fechaInicio,
   }
 
-  console.log('curso agregado');
   this.store.dispatch(agregarCursoState({curso: cursoNuevo}));
   }
 

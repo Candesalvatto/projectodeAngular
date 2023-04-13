@@ -19,6 +19,8 @@ import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
+import { OrganizacionComponent } from './components/organizacion/components/organizacion.component';
+import { OrganizacionModule } from './components/organizacion/organizacion.module';
 
 
 
@@ -34,6 +36,7 @@ import { EffectsModule } from '@ngrx/effects';
     PagenotfoundComponent,
     InicioComponent,
     InfoBecasComponent,
+    OrganizacionComponent
   ],
 
   imports: [
@@ -44,6 +47,7 @@ import { EffectsModule } from '@ngrx/effects';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    OrganizacionModule,
     CommonModule,
     StoreModule.forRoot({},{}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
@@ -54,6 +58,7 @@ import { EffectsModule } from '@ngrx/effects';
     RouterModule,
     SectionSliderComponent,
     SectionAlumnosComponent,
+    OrganizacionComponent,
     FormSociosComponent,
     SectionNoticiasComponent,
     FooterComponent,

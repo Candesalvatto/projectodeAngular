@@ -21,6 +21,7 @@ export class FormSociosComponent implements OnInit{
   listaSocios: Socio[] = [];
 
 
+
 constructor(
   private activatedRoute: ActivatedRoute,
   private router: Router,
@@ -34,6 +35,7 @@ ngOnInit(){
   this.socio$= this.serviceDeSocios.obtenerSocioObservable();
   this.activatedRoute.paramMap.subscribe((parametros) => {
   this.formSocios= new FormGroup({
+  id: new FormControl ('', []),
   nombre: new FormControl ('', [Validators.required]),
   apellido: new FormControl ('', [Validators.required]),
   direccion: new FormControl ('', []),
@@ -56,6 +58,7 @@ ngOnInit(){
 
 agregarSocio(){
   let socioNuevo: Socio ={
+    id: this.formSocios.value.id,
     nombre: this.formSocios.value.nombre,
     apellido: this.formSocios.value.apellido,
     direccion: this.formSocios.value.direccion,
@@ -73,9 +76,8 @@ agregarSocio(){
 }
 
 this.serviceDeSocios.agregarSocio(socioNuevo);
-console.log ('agregando socio nuevo', socioNuevo);
 this.listaSocios.push(socioNuevo);
-this.snackBar.open(`Felicitaciones! ${socioNuevo.nombre} ${socioNuevo.apellido} Ya eres socio de nuestra comunidad`)
+this.snackBar.open(`Felicitaciones! ${socioNuevo.nombre} ${socioNuevo.apellido} Ya eres socio de nuestra comunidad`,'', {duration: 2000} )
 setTimeout(() => {
   this.router.navigate(['/inicio']);
 }, 2000);

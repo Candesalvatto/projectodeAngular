@@ -23,7 +23,7 @@ export class SectionAlumnosComponent implements OnInit{
 
   ngOnInit(): void {
   this.listaAlumnos= this.servicesDeAlumnos.obtenerAlumno()
-  this.listaSocios=this.serviceDeSocios.obtenerSocio()
+  this.listaSocios=this.serviceDeSocios.obtenerSocio$()
   }
 
 
