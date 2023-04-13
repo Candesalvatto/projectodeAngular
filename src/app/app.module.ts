@@ -21,6 +21,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { OrganizacionComponent } from './components/organizacion/components/organizacion.component';
 import { OrganizacionModule } from './components/organizacion/organizacion.module';
+import { SociosModuleModule } from './socios/socios.module.module';
 
 
 
@@ -47,6 +48,7 @@ import { OrganizacionModule } from './components/organizacion/organizacion.modul
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    SociosModuleModule,
     OrganizacionModule,
     CommonModule,
     StoreModule.forRoot({},{}),

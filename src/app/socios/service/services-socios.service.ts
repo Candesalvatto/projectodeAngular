@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Socio } from '../models/socio';
+import { Socio } from '../../models/socio';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environment/environment';
 

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ServicesSociosService } from '../services/services-socios.service';
-import { InicioSesionComponent } from '../inicio-sesion/components/inicio-sesion.component';
+import { ServicesSociosService } from './service/services-socios.service';
+import { SociosComponent } from './components/tabla/socios.component';
 
 
 const routes: Routes = [
-  { path: '', component: InicioSesionComponent}
+  { path: '', component: SociosComponent}
 ]
 
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Alumno} from 'src/app/models/alumnos';
 import { Socio } from 'src/app/models/socio';
 import {ServiceAlumnoService} from 'src/app/services/service-alumno.service';
-import { ServicesSociosService } from 'src/app/services/services-socios.service';
+import { ServicesSociosService } from 'src/app/socios/service/services-socios.service';
 
 
 @Component({

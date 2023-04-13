@@ -5,14 +5,14 @@ import { FormSociosComponent } from './components/form-socios/form-socios.compon
 import { InicioComponent } from './components/inicio/inicio.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { SectionNoticiasComponent } from './components/section-noticias/section-noticias.component';
+import { OrganizacionComponent } from './components/organizacion/components/organizacion.component';
 
 
 const routes: Routes = [
   {path: 'inicio', component: InicioComponent},
   { path:'formacion',
   loadChildren: ()=> import('./cursos/cursos.module').then((modulo)=>modulo.CursosModule)},
-  { path: 'organizacion',
-loadChildren: ()=> import('./components/organizacion/organizacion.module').then((modulo)=>modulo.OrganizacionModule)},
+  { path: 'organizacion', component: OrganizacionComponent},
   { path:'inicio-sesion', loadChildren:()=> import('./inicio-sesion/inicio-sesion.module').then((modulo)=> modulo.InicioSesionModule)},
   { path: 'noticias', component: SectionNoticiasComponent },
   { path: 'formulario-socios', component: FormSociosComponent },

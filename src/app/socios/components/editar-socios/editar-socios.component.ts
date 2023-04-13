@@ -3,7 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Socio } from 'src/app/models/socio';
-import { ServicesSociosService } from 'src/app/services/services-socios.service';
+import { ServicesSociosService } from 'src/app/socios/service/services-socios.service';
 import { socioState } from '../../state/socio-state.reducer';
 import { editarSocioState } from '../../state/socio-state.actions';
 import { Store } from '@ngrx/store';

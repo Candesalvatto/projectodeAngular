@@ -6,7 +6,7 @@ import { Observable, EMPTY } from 'rxjs';
 import * as SocioStateActions from './socio-state.actions';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ServicesSociosService } from 'src/app/services/services-socios.service';
+import { ServicesSociosService } from 'src/app/socios/service/services-socios.service';
 import { agregarSocioState, editarSocioState, eliminarSocioState, finishSocioState } from './socio-state.actions';
 import { Socio } from 'src/app/models/socio';
 import { loadStateFeatures } from 'src/app/cursos/state/state-feature.actions';

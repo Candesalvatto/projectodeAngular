@@ -8,7 +8,7 @@ export const selectorAuthState = createFeatureSelector<fromAuth.AuthState>(
 export const selectorSesionState = createSelector(
   selectorAuthState,
   (state) => state.sesion
-);
+)
 
 export const selectorSesionActiva = createSelector(
   selectorAuthState,

@@ -7,7 +7,7 @@ import { Observable, Subscription } from 'rxjs';
 import { LoguinService } from 'src/app/inicio-sesion/services/loguin.service';
 import { Sesion } from 'src/app/models/sesion';
 import { Socio } from 'src/app/models/socio';
-import { ServicesSociosService } from 'src/app/services/services-socios.service';
+import { ServicesSociosService } from 'src/app/socios/service/services-socios.service';
 import { eliminarSocioState } from '../../state/socio-state.actions';
 import { EditarSociosComponent } from '../editar-socios/editar-socios.component';
 import { socioState } from '../../state/socio-state.reducer';

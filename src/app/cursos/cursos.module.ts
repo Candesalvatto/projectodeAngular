@@ -16,7 +16,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducer, stateFeatureFeatureKey } from './state/state-feature.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { StateFeatureCursosEffects } from './state/state-feature.effects';
-import { OrganizacionModule } from '../components/organizacion/organizacion.module';
+
 
 
 
@@ -35,7 +35,6 @@ import { OrganizacionModule } from '../components/organizacion/organizacion.modu
     ReactiveFormsModule,
     MaterialModule,
     HttpClientModule,
-    OrganizacionModule,
     RouterModule,
     StoreModule.forFeature(stateFeatureFeatureKey, reducer),
     EffectsModule.forFeature([StateFeatureCursosEffects])

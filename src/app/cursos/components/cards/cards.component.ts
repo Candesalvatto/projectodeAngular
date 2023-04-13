@@ -15,7 +15,7 @@ import { CursoState } from '../../state/state-feature.reducer';
   templateUrl: './cards.component.html',
   styleUrls: ['./cards.component.css']
 })
-export class cardsComponent implements OnInit, OnDestroy{
+export class cardsComponent implements OnInit{
 
   cursos!:Curso[];
   suscript!: Subscription;
@@ -38,10 +38,7 @@ this.sesion$ = this.sesionService.obtenerSesion();
 this.cursos$= this.store.select(selectorCursosCargados);
 
 }
+}
 
-ngOnDestroy(){
-  this.suscript.unsubscribe();
-}
-}
 
 

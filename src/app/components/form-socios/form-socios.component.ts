@@ -3,7 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Socio } from '../../models/socio'
 import { Observable } from 'rxjs';
-import { ServicesSociosService } from 'src/app/services/services-socios.service';
+import { ServicesSociosService } from 'src/app/socios/service/services-socios.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 

@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { OrganizacionRountingModule } from './organizacion-rounting.module';
 import { SociosModuleModule } from 'src/app/socios/socios.module.module';
 import { CursosModule } from 'src/app/cursos/cursos.module';
+import { RouterModule } from '@angular/router';
+import { MaterialModule } from 'src/app/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +15,10 @@ import { CursosModule } from 'src/app/cursos/cursos.module';
     CommonModule,
     OrganizacionRountingModule,
     SociosModuleModule,
-    CursosModule
-  ]
+    CursosModule,
+    MaterialModule,
+    ReactiveFormsModule,
+  ],
+  exports:[RouterModule],
 })
 export class OrganizacionModule { }

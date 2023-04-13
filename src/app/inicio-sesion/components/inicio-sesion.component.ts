@@ -15,7 +15,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './inicio-sesion.component.html',
   styleUrls: ['./inicio-sesion.component.css']
 })
-export class InicioSesionComponent implements OnInit, OnDestroy {
+export class InicioSesionComponent implements OnInit {
 
   formulario!: FormGroup;
   suscripcion!: Subscription
@@ -32,9 +32,7 @@ export class InicioSesionComponent implements OnInit, OnDestroy {
     admin: new FormControl(),
   })};
 
-ngOnDestroy(): void {
-this.suscripcion.unsubscribe()
-}
+
 
   iniciarSesion(){
     let user:User= {
