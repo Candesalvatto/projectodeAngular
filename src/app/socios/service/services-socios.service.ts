@@ -33,18 +33,18 @@ export class ServicesSociosService {
 
 
   obtenerSocio(): Observable<Socio[]>{
-    return this.http.get<Socio[]>(`${environment.socioURL}/socio`);
+    return this.http.get<Socio[]>(`${environment.socioURL}/socios`);
   };
 
   agregarSocio(socio: Socio):Observable<Socio>  {
-    return this.http.post<Socio>(`${environment.socioURL}/socio`,socio)
+    return this.http.post<Socio>(`${environment.socioURL}/socios`,socio)
    };
 
   deleteSocio(socio: Socio): Observable<Socio> {
-    return this.http.delete<Socio>(`${environment.socioURL}/socio/${socio.id}`)
+    return this.http.delete<Socio>(`${environment.socioURL}/socios/${socio.id}`)
   };
 
   editarSocio(socio: Socio): Observable<Socio> {
-    return this.http.put<Socio>(`${environment.socioURL}/socio/${socio.id}`, socio)
+    return this.http.put<Socio>(`${environment.socioURL}/socios/${socio.id}`, socio)
   };
 }

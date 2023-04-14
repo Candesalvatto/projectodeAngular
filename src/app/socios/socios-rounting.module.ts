@@ -1,11 +1,16 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ServicesSociosService } from './service/services-socios.service';
 import { SociosComponent } from './components/tabla/socios.component';
+import { SesionGuard } from '../guards/sesion.guard';
+import { AdminGuard } from '../guards/admin.guard';
+import { FormSociosComponent } from './components/form-socios/form-socios.component';
 
 
 const routes: Routes = [
-  { path: '', component: SociosComponent}
+ //  { path: '',canActivateChild: [SesionGuard],  component: SociosComponent, canActivate: [AdminGuard]}
+ { path:'', canActivateChild: [SesionGuard] ,children: [
+  { path: 'formulario-socio-nuevo', component: FormSociosComponent, canActivate: [AdminGuard] }]}
 ]
 
 

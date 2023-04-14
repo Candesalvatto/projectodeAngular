@@ -1,5 +1,6 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import * as fromAuth from './auth.reducer';
+import { AuthState } from './auth.reducer';
 
 export const selectorAuthState = createFeatureSelector<fromAuth.AuthState>(
   fromAuth.authFeatureKey
@@ -7,7 +8,8 @@ export const selectorAuthState = createFeatureSelector<fromAuth.AuthState>(
 
 export const selectorSesionState = createSelector(
   selectorAuthState,
-  (state) => state.sesion
+  //(state) => state.sesion
+  (state: AuthState) => state.sesion
 )
 
 export const selectorSesionActiva = createSelector(

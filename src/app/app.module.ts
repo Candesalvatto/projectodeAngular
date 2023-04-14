@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { SectionSliderComponent } from './components/section-slider/section-slider.component';
 import { SectionAlumnosComponent } from './components/section-alumnos/section-alumnos.component';
-import { FormSociosComponent } from './components/form-socios/form-socios.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MaterialModule} from './material.module';
@@ -19,9 +18,11 @@ import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { OrganizacionComponent } from './components/organizacion/components/organizacion.component';
-import { OrganizacionModule } from './components/organizacion/organizacion.module';
-import { SociosModuleModule } from './socios/socios.module.module';
+import { InicioSesionModule } from './inicio-sesion/inicio-sesion.module';
+
+
+
+
 
 
 
@@ -31,25 +32,24 @@ import { SociosModuleModule } from './socios/socios.module.module';
     AppComponent,
     SectionSliderComponent,
     SectionAlumnosComponent,
-    FormSociosComponent,
+  // FormSociosComponent,
     SectionNoticiasComponent,
     FooterComponent,
     PagenotfoundComponent,
     InicioComponent,
     InfoBecasComponent,
-    OrganizacionComponent
+
   ],
 
   imports: [
     BrowserModule,
     RouterModule,
     AppRountingModule,
+    InicioSesionModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    SociosModuleModule,
-    OrganizacionModule,
     CommonModule,
     StoreModule.forRoot({},{}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
@@ -58,14 +58,6 @@ import { SociosModuleModule } from './socios/socios.module.module';
 
   exports:[ HttpClientModule,
     RouterModule,
-    SectionSliderComponent,
-    SectionAlumnosComponent,
-    OrganizacionComponent,
-    FormSociosComponent,
-    SectionNoticiasComponent,
-    FooterComponent,
-    PagenotfoundComponent,
-    InicioComponent,
     MaterialModule,
   ],
 

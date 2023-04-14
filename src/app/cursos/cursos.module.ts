@@ -16,6 +16,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducer, stateFeatureFeatureKey } from './state/state-feature.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { StateFeatureCursosEffects } from './state/state-feature.effects';
+import { DataCursoComponent } from './components/data-curso/data-curso.component';
 
 
 
@@ -23,6 +24,7 @@ import { StateFeatureCursosEffects } from './state/state-feature.effects';
 @NgModule({
   declarations:[
   cardsComponent,
+  DataCursoComponent,
   SectionCursosComponent,
   FormNuevoCursoComponent,
   FormatoFechaHoraPipe,

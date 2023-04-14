@@ -1,4 +1,3 @@
-<!--
 <div class="container-form">
   <h1> ¿Querés asociarte?</h1>
   <h2> Completá el formulario con tu información y formá parte de nosotros.</h2>
@@ -68,10 +67,8 @@
     <input formControlName="matricula" type="number" class="form-control " id="inputMatricula">
     <div class="invalid" *ngIf="formSocios.controls['matricula'].untouched && formSocios.controls['matricula'].errors?.['required']" >Campo obligatorio</div>
   </div>
-  <div class="span-error">{{spanError}}</div>
   <div class="col-12 boton">
-    <button mat-raised-button>ASOCIARME</button>
+    <button mat-raised-button type="submit">ASOCIARME</button>
   </div>
 </form>
 </div>
--->

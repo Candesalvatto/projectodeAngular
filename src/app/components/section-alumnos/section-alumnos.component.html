@@ -24,22 +24,3 @@
       </ul>
     </div>
   </div>
-
-  <p>
-    <button class="btn btn-primary mx-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample1">
-      SOCIOS
-    </button>
-  </p>
-  <div class="collapse" id="collapseExample3">
-    <div class="card card-body fs-1" id="placeholder-alumno">
-      <ul *ngFor=" let Alumno of listaAlumnos">
-        <li *ngIf="Alumno.socio === true"> {{Alumno.nombre +" "+ Alumno.apellido}}
-      </ul>
-      <ul *ngFor=" let Socio of listaSocios">
-        <li> {{Socio.nombre +" "+ Socio.apellido}}</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-

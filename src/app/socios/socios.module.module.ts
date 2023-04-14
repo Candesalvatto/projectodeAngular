@@ -13,6 +13,9 @@ import { DataSociosComponent } from './components/data/data-socios.component';
 import { StoreModule } from '@ngrx/store';
 import { reducer, socioStateFeatureKey } from './state/socio-state.reducer';
 import { SociosRountingModule } from './socios-rounting.module';
+import { FormSociosComponent } from './components/form-socios/form-socios.component';
+
+
 
 
 
@@ -21,7 +24,8 @@ import { SociosRountingModule } from './socios-rounting.module';
   declarations: [
     EditarSociosComponent,
     SociosComponent,
-    DataSociosComponent
+    DataSociosComponent,
+    FormSociosComponent 
   ],
   imports: [
     CommonModule,

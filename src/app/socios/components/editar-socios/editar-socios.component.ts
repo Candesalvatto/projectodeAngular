@@ -1,7 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { Router } from '@angular/router';
 import { Socio } from 'src/app/models/socio';
 import { ServicesSociosService } from 'src/app/socios/service/services-socios.service';
 import { socioState } from '../../state/socio-state.reducer';
@@ -63,7 +62,6 @@ editarSocio(){
       matricula: this.formulario.value.matricula,
   };
   this.store.dispatch(editarSocioState( { socio }));
-  this.servicesDeSocios.editarSocio(socio).subscribe((socio:Socio)=>{
-  this.dialogRef.close(socio)});
+  this.dialogRef.close(socio);
 }
 }

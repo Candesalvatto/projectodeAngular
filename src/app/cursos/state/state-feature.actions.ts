@@ -1,7 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 import { Curso } from '../../models/cursos';
 
-
 export const loadStateFeatures = createAction(
   '[Listado de Cursos] Cargar cursos',
 );

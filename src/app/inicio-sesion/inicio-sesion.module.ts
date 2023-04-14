@@ -8,6 +8,8 @@ import { InicioSesionService } from './services/inicio-sesion.service';
 import { RouterModule } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { authFeatureKey, reducer } from './state/auth.reducer';
+import { SociosModuleModule } from '../socios/socios.module.module';
+
 
 
 @NgModule({
@@ -21,7 +23,7 @@ import { authFeatureKey, reducer } from './state/auth.reducer';
     ReactiveFormsModule,
     MaterialModule,
     RouterModule,
-    StoreModule.forFeature(authFeatureKey, reducer)
+    StoreModule.forFeature('auth', reducer)
     ],
     exports:[RouterModule],
 
