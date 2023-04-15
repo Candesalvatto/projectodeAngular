@@ -51,7 +51,7 @@ ngOnInit(){
   puesto: new FormControl ('', []),
   matricula: new FormControl ('', [Validators.required]),
 });
-//this.socio$= this.serviceDeSocios.obtenerSocioObservable();
+
 
 }
 

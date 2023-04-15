@@ -11,7 +11,7 @@ const routes: Routes = [
 
 {
   path:'',
-  canActivateChild: [SesionGuard], component:SociosComponent,
+  canActivateChild: [SesionGuard], component:SociosComponent, canActivate: [AdminGuard],
   children: [
     {
       path: 'formulario-socio-nuevo',

@@ -14,6 +14,7 @@ import { socioState } from '../../state/socio-state.reducer';
 import { selectorCargandoSocios, selectorSociosCargados } from '../../state/socio-state.selectors';
 import { Store, select } from '@ngrx/store';
 import * as fromAuth from '../../../inicio-sesion/state/auth.reducer';
+import { SocioPasswordComponent } from '../socio-password/socio-password.component';
 
 
 @Component({
@@ -71,6 +72,12 @@ this.dialog.open(EditarSociosComponent, {
 deleteSocio(socio: Socio) {
     this.store.dispatch(eliminarSocioState({ socio }))
 }
-
+openDialog(socio: Socio) {
+  const dialogRef = this.dialog.open(SocioPasswordComponent, {
+    data: { socio: socio }
+  });
 }
+}
+
+
 

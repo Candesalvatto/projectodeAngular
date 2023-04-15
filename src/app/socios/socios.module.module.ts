@@ -14,6 +14,7 @@ import { StoreModule } from '@ngrx/store';
 import { reducer, socioStateFeatureKey } from './state/socio-state.reducer';
 import { SociosRountingModule } from './socios-rounting.module';
 import { FormSociosComponent } from './components/form-socios/form-socios.component';
+import { SocioPasswordComponent } from './components/socio-password/socio-password.component';
 
 
 
@@ -25,7 +26,8 @@ import { FormSociosComponent } from './components/form-socios/form-socios.compon
     EditarSociosComponent,
     SociosComponent,
     DataSociosComponent,
-    FormSociosComponent
+    FormSociosComponent,
+    SocioPasswordComponent
   ],
   imports: [
     CommonModule,
