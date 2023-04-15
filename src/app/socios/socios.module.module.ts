@@ -25,7 +25,7 @@ import { FormSociosComponent } from './components/form-socios/form-socios.compon
     EditarSociosComponent,
     SociosComponent,
     DataSociosComponent,
-    FormSociosComponent 
+    FormSociosComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +37,8 @@ import { FormSociosComponent } from './components/form-socios/form-socios.compon
     StoreModule.forFeature(socioStateFeatureKey, reducer),
     EffectsModule.forFeature([SocioStateEffects])
   ],
-  exports:[HttpClientModule],
+  exports:[HttpClientModule,
+    FormSociosComponent],
 
   providers:[ServicesSociosService],
 })

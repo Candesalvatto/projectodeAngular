@@ -24,13 +24,30 @@ export class SocioStateEffects {
     )
   });
 
+  agregarSocio$= createEffect(() => {
+    return this.actions$.pipe(
+      ofType(agregarSocioState),
+      concatMap(({ socio }) => {
+        return this.socio.agregarSocio(socio).pipe(
+          map((socioNuevo: Socio) => {
+            this.snackBar.open(`Felicitaciones! ${socioNuevo.nombre} ${socioNuevo.apellido} Ya eres socio de nuestra comunidad`,'', {duration: 2000} )
+            return loadSocioStates();
+          }),
+          catchError((error) => {
+            return of({ type: 'ERROR_AGREGANDO_SOCIO' });
+          })
+        );
+      })
+    );
+  });
+
   editarSocio$= createEffect(()=>{
     return this.actions$.pipe(
       ofType(editarSocioState),
       concatMap(({ socio })=>{
         return this.socio.editarSocio(socio).pipe(
-          map((socio: Socio)=>{
-          this.snackBar.open(`${socio.nombre } editado satisfactoriamente`,'', {duration: 2000})
+          map((socioActualizado: Socio)=>{
+          this.snackBar.open(`${socioActualizado.nombre } editado satisfactoriamente`,'', {duration: 2000})
           return loadSocioStates()
   }),
   catchError((error) => {

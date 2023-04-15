@@ -35,8 +35,6 @@ constructor(
 
 ngOnInit(){
   let regexCorreo: string ="^[^@]+@[^@]+\.[a-zA-Z]{2,}$";
-  this.socio$= this.serviceDeSocios.obtenerSocioObservable();
-  this.activatedRoute.paramMap.subscribe((parametros) => {
   this.formSocios= new FormGroup({
   nombre: new FormControl ('', [Validators.required]),
   apellido: new FormControl ('', [Validators.required]),
@@ -53,8 +51,7 @@ ngOnInit(){
   puesto: new FormControl ('', []),
   matricula: new FormControl ('', [Validators.required]),
 });
-
-})
+//this.socio$= this.serviceDeSocios.obtenerSocioObservable();
 
 }
 
@@ -76,14 +73,14 @@ agregarSocio(){
     puesto: this.formSocios.value.puesto,
     matricula: this.formSocios.value.matricula,
 }
-
 this.store.dispatch(agregarSocioState({socio: socioNuevo}));
- this.snackBar.open(`Felicitaciones! ${socioNuevo.nombre} ${socioNuevo.apellido} Ya eres socio de nuestra comunidad`,'', {duration: 2000} )
  setTimeout(() => {
    this.router.navigate(['/tabla-de-socios']);
  }, 2000);
 }
 
 
+
 }
+
 

@@ -11,10 +11,10 @@ import { SociosComponent } from './socios/components/tabla/socios.component';
 
 const routes: Routes = [
   {path: 'inicio', component: InicioComponent},
+  { path: 'tabla-de-socios', loadChildren: ()=> import('./socios/socios.module.module').then((modulo)=>modulo.SociosModuleModule)},
   { path:'formacion',
   loadChildren: ()=> import('./cursos/cursos.module').then((modulo)=>modulo.CursosModule)},
   { path:'inicio-sesion', loadChildren:()=> import('./inicio-sesion/inicio-sesion.module').then((modulo)=> modulo.InicioSesionModule)},
-  { path: 'tabla-de-socios', loadChildren: ()=> import('./socios/socios.module.module').then((modulo)=>modulo.SociosModuleModule)},
   { path: 'noticias', component: SectionNoticiasComponent },
   { path: 'formulario-socio-nuevo', component: FormSociosComponent },
   { path: 'footer', component: FooterComponent },

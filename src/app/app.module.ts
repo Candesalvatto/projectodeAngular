@@ -19,6 +19,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { InicioSesionModule } from './inicio-sesion/inicio-sesion.module';
+import { SociosModuleModule } from './socios/socios.module.module';
 
 
 

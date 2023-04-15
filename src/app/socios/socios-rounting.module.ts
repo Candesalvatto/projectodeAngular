@@ -8,9 +8,18 @@ import { FormSociosComponent } from './components/form-socios/form-socios.compon
 
 
 const routes: Routes = [
- //  { path: '',canActivateChild: [SesionGuard],  component: SociosComponent, canActivate: [AdminGuard]}
- { path:'', canActivateChild: [SesionGuard] ,children: [
-  { path: 'formulario-socio-nuevo', component: FormSociosComponent, canActivate: [AdminGuard] }]}
+
+{
+  path:'',
+  canActivateChild: [SesionGuard], component:SociosComponent,
+  children: [
+    {
+      path: 'formulario-socio-nuevo',
+      component: FormSociosComponent,
+      canActivate: [AdminGuard]
+    }
+  ]
+}
 ]
 
 

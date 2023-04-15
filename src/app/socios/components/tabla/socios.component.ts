@@ -3,16 +3,16 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
-import { Observable, Subscription } from 'rxjs';
+import { Observable, Subject, Subscription, takeUntil } from 'rxjs';
 import { LoguinService } from 'src/app/inicio-sesion/services/loguin.service';
 import { Sesion } from 'src/app/models/sesion';
 import { Socio } from 'src/app/models/socio';
 import { ServicesSociosService } from 'src/app/socios/service/services-socios.service';
-import { eliminarSocioState, loadSocioStates } from '../../state/socio-state.actions';
+import { eliminarSocioState, finishSocioState, loadSocioStates } from '../../state/socio-state.actions';
 import { EditarSociosComponent } from '../editar-socios/editar-socios.component';
 import { socioState } from '../../state/socio-state.reducer';
-import { selectorCargandoSocios } from '../../state/socio-state.selectors';
-import { Store } from '@ngrx/store';
+import { selectorCargandoSocios, selectorSociosCargados } from '../../state/socio-state.selectors';
+import { Store, select } from '@ngrx/store';
 import * as fromAuth from '../../../inicio-sesion/state/auth.reducer';
 
 
@@ -44,20 +44,19 @@ export class SociosComponent implements OnInit, OnDestroy {
   ){}
 
   ngOnInit(): void {
-    this.socios$ = this.servicesDeSocios.obtenerSocio() ;
-    this.sesion$ = this.sesionService.obtenerSesion();
-    this.loadind$ =this.store.select(selectorCargandoSocios);
-    this.store.dispatch(loadSocioStates());
+    this.dataSource = new MatTableDataSource<Socio>();
+      this.sesion$= this.sesionService.obtenerSesion()
+      this.store.dispatch(loadSocioStates());
+ this.store.select(selectorSociosCargados).subscribe((socios: Socio[])=>{   this.dataSource.data = socios;})
 
-this.dataSource = new MatTableDataSource<Socio>();
-this.suscript = this.servicesDeSocios.obtenerSocio().subscribe((socios: Socio[]) => {
-  this.dataSource.data = socios;
-});
+
 }
 
 
 ngOnDestroy(){
-  this.suscript.unsubscribe();
+  if (this.suscript) {
+    this.suscript.unsubscribe();
+  }
 }
 
 

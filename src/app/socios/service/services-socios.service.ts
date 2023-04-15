@@ -9,10 +9,14 @@ import { environment } from 'src/environment/environment';
 })
 export class ServicesSociosService {
 
-   listaSocios: Socio[] = [];
-   private socio$!: BehaviorSubject<Socio[]>;
+   private listaSocios: Socio[] = [];
+   private socio$!: BehaviorSubject<Socio[]>
 
+   constructor(
+    private http: HttpClient
+  ){
 
+  }
 
   obtenerSocio$(): Array<Socio> {
     return this.listaSocios
@@ -25,11 +29,7 @@ export class ServicesSociosService {
   obtenerSocioObservable(): Observable<Socio[]> {
     return this.socio$.asObservable();
   }
-  constructor(
-    private http: HttpClient
-  ){
-    this.socio$ = new BehaviorSubject<Socio[]>(this.listaSocios);
-  }
+
 
 
   obtenerSocio(): Observable<Socio[]>{
@@ -47,4 +47,5 @@ export class ServicesSociosService {
   editarSocio(socio: Socio): Observable<Socio> {
     return this.http.put<Socio>(`${environment.socioURL}/socios/${socio.id}`, socio)
   };
+
 }

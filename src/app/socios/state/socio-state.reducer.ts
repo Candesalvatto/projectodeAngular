@@ -26,9 +26,9 @@ export const reducer = createReducer(
   on (SocioStateActions.finishSocioState,(state, {socios})=> {
     return {...state, loadind: false, socios: socios}
   }),
-//   on (SocioStateActions.agregarSocioState,(state, {socio: Socio})=> {
-//     return state;
-// }),
+  on (SocioStateActions.agregarSocioState,(state, {socio: Socio})=> {
+    return state;
+}),
 on (SocioStateActions.editarSocioState,(state, {socio: Socio})=> {
   return state;
 }),

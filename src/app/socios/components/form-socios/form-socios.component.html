@@ -1,7 +1,7 @@
 <div class="container-form">
   <h1> ¿Querés asociarte?</h1>
   <h2> Completá el formulario con tu información y formá parte de nosotros.</h2>
-<form class="row g-3" novalidate [formGroup]="formSocios"(ngSubmit)="agregarSocio()">
+<form class="row g-3" [formGroup]="formSocios" (ngSubmit)="agregarSocio()">
   <div class="col-md-6">
     <label for="inputName" class="form-label">Nombre</label>
     <input formControlName="nombre" type="name" class="form-control" id="inputName">
@@ -47,8 +47,8 @@
   <div class="col-md-6">
     <label for="inputPassword" class="form-label">Password</label>
     <input formControlName="contrasena" type="password" class="form-control " id="inputPassword">
-    <div class="invalid" *ngIf="formSocios.controls['contrasena'].untouched && formSocios.controls['contrasena'].errors?.['minlength']" >Minimo 8 caracteres</div>
-    <div class="invalid" *ngIf="formSocios.controls['contrasena'].untouched && formSocios.controls['contrasena'].errors?.['required']" >Campo obligatorio</div>
+    <div class="invalid" *ngIf=" formSocios.controls['contrasena'].untouched && formSocios.controls['contrasena'].errors?.['minlength']" >Minimo 8 caracteres</div>
+    <div class="invalid" *ngIf=" formSocios.controls['contrasena'].untouched && formSocios.controls['contrasena'].errors?.['required']" >Campo obligatorio</div>
   </div>
   <div class="col-12">
     <label for="inputProf" class="form-label">Profesión</label>
