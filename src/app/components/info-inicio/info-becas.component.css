@@ -34,7 +34,9 @@
 
   .card
    {border-radius: 0;
-  border: 0;}.container {width: 70%;
+  border: 0;}
+  
+  .container {width: 70%;
 margin:40px auto;
 }
 
@@ -101,3 +103,26 @@ text-align: center;
 margin: 30px 0px 30px 500px;}
 
 
+@media (min-width: 481px) and ( max-width: 850px) {}
+
+@media (max-width: 480px) {
+  .container{width: 100%;}
+  .container-img img{width: 500px;
+  }
+
+  .container-info{
+  width: 100%;}
+  .container-de-container {
+    width: 90%;
+    margin: 30px auto;
+    font-weight: 600;
+}
+.cont-socio{width: 95%;
+  margin: auto;
+display: flex;
+flex-direction: column;}
+
+  .title-aso{font-size: 1em;}
+  .seram {padding: 0px;
+}
+} 

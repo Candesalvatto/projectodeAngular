@@ -38,3 +38,24 @@ align-items: center;
 .mat-mdc-slide-toggle {color: #002653 !important;}
 
 
+
+@media (min-width: 481px) and ( max-width: 850px) {
+  .container-img{width: 50%;}
+  .container-form{width: 30%;
+    margin:  100px auto;
+    }
+}
+
+@media (max-width: 480px) {
+  .container-img{width: 0%;
+  height: 280px;}
+  .container-all{
+    flex-direction: column
+    }
+    .container-form{width: 50%;
+      margin:  100px auto;
+      }
+
+}
+
+

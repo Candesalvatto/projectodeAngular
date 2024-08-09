@@ -42,3 +42,22 @@
   border-left: 2px solid orange;
   border-bottom: 2px solid orange;
 }
+@media (min-width: 481px) and ( max-width: 850px) {
+
+}
+
+@media (max-width: 480px) {
+
+  .container-general {
+    width: 90%;
+    margin:  auto;
+    padding: 0px;
+}
+.cont-inf p{font-size: 1.3em;}
+.cont-img {
+  width: 100%;
+  margin: 50px auto;
+}
+
+
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { Sesion } from './models/sesion';
@@ -8,10 +8,12 @@ import { selectorSesionActiva, selectorUsuarioActivo } from './inicio-sesion/sta
 import { User } from './models/user';
 
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+
 })
 export class AppComponent implements OnInit {
   title = 'course-project';
@@ -43,6 +45,8 @@ export class AppComponent implements OnInit {
 
     this.router.navigate(['inicio-sesion']);
   }
+
+
 }
 
 

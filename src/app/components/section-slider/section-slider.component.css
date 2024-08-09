@@ -1,0 +1,12 @@
+.carousel-item {  overflow: hidden;
+}
+
+@media (min-width: 481px) and ( max-width: 850px) {
+
+  }
+  
+  @media (max-width: 480px) {
+
+.carousel-item img{  object-fit: contain;
+}
+  }

@@ -5,3 +5,4 @@ export interface Alumno {
   matriculado: boolean;
   socio: boolean;
 }
+
